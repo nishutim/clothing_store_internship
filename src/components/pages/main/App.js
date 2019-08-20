@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './App.css'
 import Header from '../../blocks/Header/Header'
 import FilterBar from '../../blocks/FilterBar/FilterBar'
 import Products from '../../blocks/Products/Products'
@@ -18,10 +19,10 @@ export default class App extends Component {
       showCurrentProductDets: false
     }
 
-    this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
-    this.handleFilterTagChange = this.handleFilterTagChange.bind(this);
-    this.handleProductClick = this.handleProductClick.bind(this);
-    this.handleExitBtnClick = this.handleExitBtnClick.bind(this);
+    this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
+    this.handleFilterTagChange = this.handleFilterTagChange.bind(this)
+    this.handleProductClick = this.handleProductClick.bind(this)
+    this.handleExitBtnClick = this.handleExitBtnClick.bind(this)
   }
 
   handleFilterTextChange(filterText) {
