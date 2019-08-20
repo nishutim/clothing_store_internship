@@ -24,21 +24,21 @@ export default class Filter extends Component{
       filterOptions, 
       currentFilterTagValue,
       currentFilterTagName, 
-      onFilterTagClick } = this.props;
+      onFilterTagClick } = this.props
     
-    let filters = null;
+    let filters = null
     if ( filterName !== 'Sort By' ) {
       filters = ['All']
       products.forEach(product => { 
         product[filterOptions].forEach(filterOption => {
           if (filters.indexOf(filterOption) !== -1) {
-            return;
+            return
           }
           filters.push(filterOption)
         })
       })
     } else {
-      filters = ['Our Picks', 'Price: low to high', 'Price: high to low'];
+      filters = ['Our Picks', 'Price: low to high', 'Price: high to low']
     }
 
     return (
