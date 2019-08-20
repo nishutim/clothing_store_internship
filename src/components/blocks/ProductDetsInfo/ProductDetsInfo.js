@@ -35,7 +35,7 @@ export default class ProductDetsInfo extends Component {
           {title}
         </h3>
         <p className="product-dets-info__price">
-          {price}$
+          {price} $
         </p>
         <p className="product-dets-info__rating">
           <span>Rating:</span> {rating}
