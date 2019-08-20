@@ -1,9 +1,9 @@
-.filterbar-somefilter {
+.filterbar-filter {
   position: relative;
   margin: 50px 0 30px;
 }
 
-.filterbar-somefilter-name{
+.filterbar-filter-name{
   position: relative;
   text-align: left;
   margin-bottom: 10px;
@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 
-.filterbar-somefilter-name::after{
+.filterbar-filter-name::after{
   content: "›" ;
   position: absolute;
   font-size: 20px;
@@ -26,11 +26,11 @@
   transform: rotate(90deg);
 }
 
-.filterbar-somefilter-name:hover{
+.filterbar-filter-name:hover{
   color: #d91818;
 }
 
-.filterbar-somefilter-options{
+.filterbar-filter-options{
   display: flex;
   flex-direction: column;
   width: 20%;

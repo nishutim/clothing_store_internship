@@ -6,7 +6,7 @@ import ProductDetails from '../../blocks/ProductDetails/ProductDetails'
 
 export default class App extends Component {
   constructor(props){
-    super(props);
+    super(props)
     this.state = {
       filterText: '',
       currentCategorieTag: 'All',
@@ -26,21 +26,18 @@ export default class App extends Component {
 
   handleFilterTextChange(filterText) {
     this.setState({
-      ...this.state,
       filterText: filterText
-    });
+    })
   }
 
   handleFilterTagChange(value, currentNameTag) {
     this.setState({
-      ...this.state,
       [currentNameTag]: value
     })
   }
 
   handleProductClick(id) {
     this.setState({
-      ...this.state,
       currentProduct: [...this.state.products].filter(product => id === product._id.$oid)[0],
       showCurrentProductDets: true
     })
@@ -64,14 +61,10 @@ export default class App extends Component {
     if (this.state.showCurrentProductDets) {
       return (
         <div className="App">
-          <div 
-            className="container" 
-            style={{margin: '0px auto', width: '80%'}}
-          > 
+          <div className="container"> 
             <Header 
               onFilterTextChange={this.handleFilterTextChange}  filterText={this.state.filterText} 
-            />
-          
+            />          
             <ProductDetails 
               handleExitBtnClick={this.handleExitBtnClick} 
               product={this.state.currentProduct}
@@ -82,28 +75,21 @@ export default class App extends Component {
     }
     return (
       <div className="App">
-        <div 
-          className="container" 
-          style={{margin: '0px auto', width: '80%'}}
-        > 
+        <div className="container"> 
           <Header 
             onFilterTextChange={this.handleFilterTextChange} filterText={this.state.filterText} 
           />
-
           <FilterBar 
             products={this.state.products} 
-            currentFilterTag={this.state} 
+            currentFilterTags={this.state} 
             onFilterTagClick={this.handleFilterTagChange} 
-
           />
-
           <Products 
             products={this.state.products} 
             filterText={this.state.filterText} 
             currentFilterTags={this.state}
             handleProductClick={this.handleProductClick} 
-          />
-          
+          />          
         </div>
       </div>
     )

@@ -3,8 +3,7 @@ import './FilterItem.css'
 
 export default class FilterItem extends Component {
   constructor(props){
-    super(props);
-    
+    super(props)   
     this.handleFilterTagClick = this.handleFilterTagClick.bind(this);
   }
 

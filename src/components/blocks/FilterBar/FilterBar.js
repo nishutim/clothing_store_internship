@@ -2,40 +2,40 @@ import React from 'react'
 import Filter from '../Filter/Filter'
 import './FilterBar.css'
 
-export default function FilterBar({ onFilterTagClick, products, currentFilterTag }) {
+export default function FilterBar({ onFilterTagClick, products, currentFilterTags }) {
   return (
     <div className="filterbar">
       <Filter 
         filterName="Categories" 
-        filterItems="tags" 
+        filterOptions="tags" 
         products={products} 
-        currentFilterTagValue={currentFilterTag.currentCategorieTag}
+        currentFilterTagValue={currentFilterTags.currentCategorieTag}
         currentFilterTagName="currentCategorieTag"
-        onFilterTagClick={onFilterTagClick} />
-
+        onFilterTagClick={onFilterTagClick} 
+      />
       <Filter 
         filterName="Sizes" 
-        filterItems="size" 
+        filterOptions="size" 
         products={products}
-        currentFilterTagValue={currentFilterTag.currentSizeTag} 
+        currentFilterTagValue={currentFilterTags.currentSizeTag} 
         currentFilterTagName="currentSizeTag"
-        onFilterTagClick={onFilterTagClick} />
-
+        onFilterTagClick={onFilterTagClick} 
+      />
       <Filter 
         filterName="Colors" 
-        filterItems="color" 
+        filterOptions="color" 
         products={products}
-        currentFilterTagValue={currentFilterTag.currentColorTag} 
+        currentFilterTagValue={currentFilterTags.currentColorTag} 
         currentFilterTagName="currentColorTag" 
-        onFilterTagClick={onFilterTagClick} />
-
+        onFilterTagClick={onFilterTagClick} 
+      />
       <Filter 
         filterName="Sort By"
         products={products}
-        currentFilterTagValue={currentFilterTag.currentSortTag} 
+        currentFilterTagValue={currentFilterTags.currentSortTag} 
         currentFilterTagName="currentSortTag" 
-        onFilterTagClick={onFilterTagClick} />
-
+        onFilterTagClick={onFilterTagClick} 
+      />
     </div>
   )
 }

@@ -7,7 +7,6 @@ export default class ProductDetsGallery extends Component {
     this.state = {
       currentMainPic: this.props.urls[0]
     }
-
     this.handlePicClick = this.handlePicClick.bind(this);
   }
 
@@ -35,7 +34,7 @@ export default class ProductDetsGallery extends Component {
         <div className="product-dets-gallery-mainImg">
           <img 
             src={this.state.currentMainPic} 
-            alt="main pic"   className="product-dets-gallery-mainImg__item"
+            alt="main pic" className="product-dets-gallery-mainImg__item"
           /> 
         </div>
       </div>

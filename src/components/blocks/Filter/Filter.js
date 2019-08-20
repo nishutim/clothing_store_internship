@@ -4,26 +4,24 @@ import FilterItem from '../FilterItem/FilterItem'
 
 export default class Filter extends Component{ 
   constructor(props){
-    super(props);
-
+    super(props)
     this.state = {
       showOptions: false
     }
-
     this.handleSomeFilterNameClick = this.handleSomeFilterNameClick.bind(this)
   }
 
   handleSomeFilterNameClick(e){
     this.setState(state => ({
       showOptions: !state.showOptions
-    }))
-  
+    }))  
   }
 
   render() {
-    const { filterName, 
+    const { 
+      filterName, 
       products, 
-      filterItems, 
+      filterOptions, 
       currentFilterTagValue,
       currentFilterTagName, 
       onFilterTagClick } = this.props;
@@ -32,11 +30,11 @@ export default class Filter extends Component{
     if ( filterName !== 'Sort By' ) {
       filters = ['All']
       products.forEach(product => { 
-        product[filterItems].forEach(filterItem => {
-          if (filters.indexOf(filterItem) !== -1) {
+        product[filterOptions].forEach(filterOption => {
+          if (filters.indexOf(filterOption) !== -1) {
             return;
           }
-          filters.push(filterItem)
+          filters.push(filterOption)
         })
       })
     } else {
@@ -44,14 +42,14 @@ export default class Filter extends Component{
     }
 
     return (
-      <div className="filterbar-somefilter">
+      <div className={`filterbar-filter ${filterName}`}>
         <button 
-          className="filterbar-somefilter-name"
+          className="filterbar-filter-name"
           onClick={this.handleSomeFilterNameClick} 
         >
           {filterName}
         </button>
-        {this.state.showOptions && <div className="filterbar-somefilter-options">
+        {this.state.showOptions && <div className="filterbar-filter-options">
           {filters.map(filter => (
             <FilterItem 
               key={filter} 
