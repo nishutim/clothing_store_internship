@@ -15,8 +15,9 @@ p{
 }
 
 .product-dets-info{
+  padding-top: 20px;
+  padding-bottom: 50px;
   width: 35%;
-  min-width: 300px;
   color: #4f4f4f;
 }
 
@@ -37,8 +38,47 @@ p{
   font-size: 20px
 }
 
+.product-dets-info-desc{
+  position: relative;
+}
+
 .product-dets-info-desc__description{
   font-size: 16px;
-  height: 200px;
-  overflow: scroll;
+  height: 100px;
+  overflow: hidden;
 }
+
+@media only screen and (max-width: 1335px)  {
+  .product-dets-info{
+    width: 80%;
+    color: #4f4f4f;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+.product-dets-info-desc-mask{
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  background: #fff;
+  opacity: 0.9;
+  padding: 20px;
+}
+
+.product-dets-info-desc-mask__btn{
+  display: block;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px;
+  background: #fff;
+  border: 2px solid #4f4f4f;
+}
+
+.product-dets-info-desc-mask__btn:hover{
+  color: #d91818;
+}
+
+
+
