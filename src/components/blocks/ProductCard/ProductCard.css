@@ -1,0 +1,30 @@
+.products-productcard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  min-width: 200px;
+  margin-bottom: 30px;
+}
+
+
+.products-productcard:hover{
+  cursor: pointer;
+}
+
+.products-productcard-img{
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.products-productcard-desc__title{
+  line-height: 1.15em;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.products-productcard-desc__price{
+  font-weight: bold;
+  padding-left: 10px;
+}

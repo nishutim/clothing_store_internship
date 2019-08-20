@@ -1,0 +1,12 @@
+.header-searchbar{
+  flex: 7;
+}
+
+.header-searchbar-searchinput{
+  display: block; 
+  float: right; 
+  width: 60%; 
+  border-radius: 10px; 
+  padding: 10px; 
+  font-size: 16px;
+}

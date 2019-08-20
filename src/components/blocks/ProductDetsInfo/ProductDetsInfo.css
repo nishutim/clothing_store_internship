@@ -1,0 +1,44 @@
+* {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+span, h4{
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p{
+  font-size: 20px;
+}
+
+.product-dets-info{
+  width: 35%;
+  min-width: 300px;
+  color: #4f4f4f;
+}
+
+.product-dets-info__name{
+  font-weight: normal;
+  letter-spacing: 1px;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.product-dets-info__price{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.product-dets-info__rating{
+  font-size: 20px
+}
+
+.product-dets-info-desc__description{
+  font-size: 16px;
+  height: 200px;
+  overflow: scroll;
+}
