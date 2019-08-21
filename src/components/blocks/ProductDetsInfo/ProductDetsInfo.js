@@ -2,32 +2,32 @@ import React, { Component } from 'react'
 import './ProductDetsInfo.css'
 
 export default class ProductDetsInfo extends Component {
-  constructor(props){
+  constructor (props) {
     super(props)
     this.state = {
-      showMoreInfo: false
+      showMoreInfo: false,
     }
-    this.handleShowMoreBtnClick = this.handleShowMoreBtnClick.bind(this);
+    this.handleShowMoreBtnClick = this.handleShowMoreBtnClick.bind(this)
   }
 
-  handleShowMoreBtnClick(){
+  handleShowMoreBtnClick () {
     this.setState(state => ({
-      showMoreInfo: !state.showMoreInfo
+      showMoreInfo: !state.showMoreInfo,
     }))
   }
 
-  render() {
-    const { productInfo } = this.props;
-    const { title, price, rating, color, size, description } = productInfo;
+  render () {
+    const { productInfo } = this.props
+    const { title, price, rating, color, size, description } = productInfo
 
     const descDescriptionStyle = {
       overflow: this.state.showMoreInfo ? 'auto' : 'hidden',
-      height: this.state.showMoreInfo ? 'auto' : '100px'
+      height: this.state.showMoreInfo ? 'auto' : '100px',
     }
-    
+
     const descMaskStyle = {
       position: this.state.showMoreInfo ? 'relative' : 'absolute',
-      top: this.state.showMoreInfo ? '0' : '100px'
+      top: this.state.showMoreInfo ? '0' : '100px',
     }
     return (
       <div className="product-dets-info">
@@ -54,7 +54,7 @@ export default class ProductDetsInfo extends Component {
             {description}
           </p>
           <div style={descMaskStyle} className="product-dets-info-desc-mask">
-            <button 
+            <button
               className="product-dets-info-desc-mask__btn"
               onClick={this.handleShowMoreBtnClick}
             >
@@ -67,5 +67,3 @@ export default class ProductDetsInfo extends Component {
     )
   }
 }
-
-

@@ -1,35 +1,36 @@
 import React, { Component } from 'react'
-import './Filter.css' 
+import './Filter.css'
 import FilterItem from '../FilterItem/FilterItem'
 
-export default class Filter extends Component{ 
-  constructor(props){
+export default class Filter extends Component {
+  constructor (props) {
     super(props)
     this.state = {
-      showOptions: false
+      showOptions: false,
     }
     this.handleSomeFilterNameClick = this.handleSomeFilterNameClick.bind(this)
   }
 
-  handleSomeFilterNameClick(e){
+  handleSomeFilterNameClick (e) {
     this.setState(state => ({
-      showOptions: !state.showOptions
-    }))  
+      showOptions: !state.showOptions,
+    }))
   }
 
-  render() {
-    const { 
-      filterName, 
-      products, 
-      filterOptions, 
+  render () {
+    const {
+      filterName,
+      products,
+      filterOptions,
       currentFilterTagValue,
-      currentFilterTagName, 
-      onFilterTagClick } = this.props
-    
+      currentFilterTagName,
+      onFilterTagClick,
+    } = this.props
+
     let filters = null
-    if ( filterName !== 'Sort By' ) {
+    if (filterName !== 'Sort By') {
       filters = ['All']
-      products.forEach(product => { 
+      products.forEach(product => {
         product[filterOptions].forEach(filterOption => {
           if (filters.indexOf(filterOption) !== -1) {
             return
@@ -43,29 +44,24 @@ export default class Filter extends Component{
 
     return (
       <div className={`filterbar-filter ${filterName}`}>
-        <button 
+        <button
           className="filterbar-filter-name"
-          onClick={this.handleSomeFilterNameClick} 
+          onClick={this.handleSomeFilterNameClick}
         >
           {filterName}
         </button>
         {this.state.showOptions && <div className="filterbar-filter-options">
           {filters.map(filter => (
-            <FilterItem 
-              key={filter} 
+            <FilterItem
+              key={filter}
               tagFilter={filter}
               filterName={filterName}
-              currentFilterTagValue={currentFilterTagValue} 
-              currentFilterTagName={currentFilterTagName} 
-              onFilterTagClick={onFilterTagClick} 
-            />
+              currentFilterTagValue={currentFilterTagValue}
+              currentFilterTagName={currentFilterTagName}
+              onFilterTagClick={onFilterTagClick} />
           ))}
         </div>}
       </div>
     )
   }
 }
-
-
-
-

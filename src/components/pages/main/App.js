@@ -6,7 +6,7 @@ import Products from '../../blocks/Products/Products'
 import ProductDetails from '../../blocks/ProductDetails/ProductDetails'
 
 export default class App extends Component {
-  constructor(props){
+  constructor (props) {
     super(props)
     this.state = {
       filterText: '',
@@ -16,7 +16,7 @@ export default class App extends Component {
       currentSortTag: 'Our Picks',
       products: [],
       currentProduct: {},
-      showCurrentProductDets: false
+      showCurrentProductDets: false,
     }
 
     this.handleFilterTextChange = this.handleFilterTextChange.bind(this)
@@ -25,75 +25,69 @@ export default class App extends Component {
     this.handleExitBtnClick = this.handleExitBtnClick.bind(this)
   }
 
-  handleFilterTextChange(filterText) {
+  handleFilterTextChange (filterText) {
     this.setState({
-      filterText: filterText
+      filterText: filterText,
     })
   }
 
-  handleFilterTagChange(value, currentNameTag) {
+  handleFilterTagChange (value, currentNameTag) {
     this.setState({
-      [currentNameTag]: value
+      [currentNameTag]: value,
     })
   }
 
-  handleProductClick(id) {
+  handleProductClick (id) {
     this.setState({
       currentProduct: [...this.state.products].filter(product => id === product._id.$oid)[0],
-      showCurrentProductDets: true
+      showCurrentProductDets: true,
     })
   }
 
-  handleExitBtnClick(){
+  handleExitBtnClick () {
     this.setState({
-      showCurrentProductDets: false
+      showCurrentProductDets: false,
     })
   }
 
-  componentDidMount(){
+  componentDidMount () {
     fetch('https://gist.githubusercontent.com/AnDrOlEiN/b626d327c77b7a4f2cc105bdb0c44786/raw/90374f0b3bb23533ea7c67cf9f66ed9c8152ffb0/data.json')
       .then(response => response.json())
       .then(data => this.setState(Object.assign({}, this.state, {
-        products: data
+        products: data,
       })))
   }
- 
-  render() {
+
+  render () {
     if (this.state.showCurrentProductDets) {
       return (
         <div className="App">
-          <div className="container"> 
-            <Header 
-              onFilterTextChange={this.handleFilterTextChange}  filterText={this.state.filterText} 
-            />          
-            <ProductDetails 
-              handleExitBtnClick={this.handleExitBtnClick} 
-              product={this.state.currentProduct}
-            />
+          <div className="container">
+            <Header
+              onFilterTextChange={this.handleFilterTextChange} filterText={this.state.filterText} />
+            <ProductDetails
+              handleExitBtnClick={this.handleExitBtnClick}
+              product={this.state.currentProduct} />
           </div>
         </div>
       )
     }
     return (
       <div className="App">
-        <div className="container"> 
-          <Header 
-            onFilterTextChange={this.handleFilterTextChange} filterText={this.state.filterText} 
-          />
-          <FilterBar 
-            products={this.state.products} 
-            currentFilterTags={this.state} 
-            onFilterTagClick={this.handleFilterTagChange} 
-          />
-          <Products 
-            products={this.state.products} 
-            filterText={this.state.filterText} 
+        <div className="container">
+          <Header
+            onFilterTextChange={this.handleFilterTextChange} filterText={this.state.filterText} />
+          <FilterBar
+            products={this.state.products}
             currentFilterTags={this.state}
-            handleProductClick={this.handleProductClick} 
-          />          
+            onFilterTagClick={this.handleFilterTagChange} />
+          <Products
+            products={this.state.products}
+            filterText={this.state.filterText}
+            currentFilterTags={this.state}
+            handleProductClick={this.handleProductClick} />
         </div>
       </div>
     )
   }
 }
-
