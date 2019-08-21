@@ -64,9 +64,10 @@ export default class App extends Component {
         <div className="App">
           <div className="container">
             <Header
-              onFilterTextChange={this.handleFilterTextChange} filterText={this.state.filterText} />
+              onFilterTextChange={this.handleFilterTextChange}
+              filterText={this.state.filterText} />
             <ProductDetails
-              handleExitBtnClick={this.handleExitBtnClick}
+              onExitBtnClick={this.handleExitBtnClick}
               product={this.state.currentProduct} />
           </div>
         </div>
@@ -76,7 +77,8 @@ export default class App extends Component {
       <div className="App">
         <div className="container">
           <Header
-            onFilterTextChange={this.handleFilterTextChange} filterText={this.state.filterText} />
+            onFilterTextChange={this.handleFilterTextChange}
+            filterText={this.state.filterText} />
           <FilterBar
             products={this.state.products}
             currentFilterTags={this.state}
@@ -85,7 +87,7 @@ export default class App extends Component {
             products={this.state.products}
             filterText={this.state.filterText}
             currentFilterTags={this.state}
-            handleProductClick={this.handleProductClick} />
+            onProductClick={this.handleProductClick} />
         </div>
       </div>
     )

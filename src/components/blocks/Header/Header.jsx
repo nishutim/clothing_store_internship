@@ -2,7 +2,12 @@ import React from 'react'
 import SearchBar from '../../forms/SearchForm/SearchBar'
 import './Header.css'
 
-export default function Header({ onFilterTextChange, filterText }) {
+export default function Header (
+  {
+    onFilterTextChange,
+    filterText,
+  }
+) {
   return (
     <header>
       <div className="header">

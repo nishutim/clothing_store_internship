@@ -3,7 +3,7 @@ import './Filter.css'
 import FilterItem from '../FilterItem/FilterItem'
 
 export default class Filter extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       showOptions: false,
@@ -11,13 +11,13 @@ export default class Filter extends Component {
     this.handleSomeFilterNameClick = this.handleSomeFilterNameClick.bind(this)
   }
 
-  handleSomeFilterNameClick(e) {
+  handleSomeFilterNameClick (e) {
     this.setState(state => ({
       showOptions: !state.showOptions,
     }))
   }
 
-  render() {
+  render () {
     const {
       filterName,
       products,
@@ -50,8 +50,7 @@ export default class Filter extends Component {
         >
           {filterName}
         </button>
-        {
-          this.state.showOptions &&
+        {this.state.showOptions &&
           <div className="filterbar-filter-options">
             {filters.map(filter => (
               <FilterItem
@@ -62,8 +61,7 @@ export default class Filter extends Component {
                 currentFilterTagName={currentFilterTagName}
                 onFilterTagClick={onFilterTagClick} />
             ))}
-          </div>
-        }
+          </div>}
       </div>
     )
   }
