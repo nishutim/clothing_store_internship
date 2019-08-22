@@ -3,25 +3,26 @@
   text-align: justify;
 }
 
-span, h4{
+span,
+h4 {
   font-weight: bold;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-p{
+p {
   font-size: 20px;
 }
 
-.product-dets-info{
+.product-dets-info {
   padding-top: 20px;
   padding-bottom: 50px;
   width: 35%;
   color: #4f4f4f;
 }
 
-.product-dets-info__name{
+.product-dets-info__name {
   font-weight: normal;
   letter-spacing: 1px;
   font-size: 24px;
@@ -29,35 +30,35 @@ p{
   margin-bottom: 15px;
 }
 
-.product-dets-info__price{
+.product-dets-info__price {
   font-weight: bold;
   font-size: 20px;
 }
 
-.product-dets-info__rating{
-  font-size: 20px
+.product-dets-info__rating {
+  font-size: 20px;
 }
 
-.product-dets-info-desc{
+.product-dets-info-desc {
   position: relative;
 }
 
-.product-dets-info-desc__description{
+.product-dets-info-desc__description {
   font-size: 16px;
   height: 100px;
   overflow: hidden;
 }
 
-@media only screen and (max-width: 1335px)  {
-  .product-dets-info{
-    width: 80%;
+@media only screen and (max-width: 960px) {
+  .product-dets-info {
+    width: 100%;
     color: #4f4f4f;
     padding-top: 20px;
     padding-bottom: 50px;
   }
 }
 
-.product-dets-info-desc-mask{
+.product-dets-info-desc-mask {
   position: absolute;
   width: 100%;
   top: 100px;
@@ -66,7 +67,7 @@ p{
   padding: 20px;
 }
 
-.product-dets-info-desc-mask__btn{
+.product-dets-info-desc-mask__btn {
   display: block;
   width: 200px;
   text-align: center;
@@ -76,9 +77,6 @@ p{
   border: 2px solid #4f4f4f;
 }
 
-.product-dets-info-desc-mask__btn:hover{
+.product-dets-info-desc-mask__btn:hover {
   color: #d91818;
 }
-
-
-

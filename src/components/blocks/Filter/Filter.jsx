@@ -27,7 +27,7 @@ export default class Filter extends Component {
       currentFilterTagName,
       onFilterTagClick,
     } = this.props
-    console.log(filterOptions)
+
     let filters = null
     if (filterName !== 'Sort By') {
       filters = ['All']

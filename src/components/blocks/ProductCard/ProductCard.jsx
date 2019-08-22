@@ -19,7 +19,7 @@ export default function ProductCard ({ _id, title, price, images, onProductClick
 ProductCard.propTypes = {
   _id: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   images: PropTypes.array.isRequired,
   onProductClick: PropTypes.func.isRequired,
 }
