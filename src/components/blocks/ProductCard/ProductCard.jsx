@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './ProductCard.css'
 
 export default function ProductCard ({ _id, title, price, images, onProductClick }) {
@@ -13,4 +14,12 @@ export default function ProductCard ({ _id, title, price, images, onProductClick
       </div>
     </div>
   )
+}
+
+ProductCard.propTypes = {
+  _id: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.string.isRequired,
+  images: PropTypes.array.isRequired,
+  onProductClick: PropTypes.func.isRequired,
 }

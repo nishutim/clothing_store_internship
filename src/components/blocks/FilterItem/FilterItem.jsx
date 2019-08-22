@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './FilterItem.css'
 
 export default class FilterItem extends Component {
@@ -20,12 +21,26 @@ export default class FilterItem extends Component {
     } = this.props
     return (
       <input
-        style={{ color: currentFilterTagValue.toLowerCase() === tagFilter.toLowerCase() ? '#d91818' : '#4f4f4f' }}
+        style={{
+          color: currentFilterTagValue.toLowerCase() === tagFilter.toLowerCase()
+            ? '#d91818' : '#4f4f4f',
+        }}
         className="filterbar-somefilter-item"
         name={currentFilterTagName}
         type="button"
-        value={filterName === 'Colors' ? tagFilter[0].toUpperCase() + tagFilter.slice(1) : tagFilter}
+        value={
+          filterName === 'Colors'
+            ? tagFilter[0].toUpperCase() + tagFilter.slice(1) : tagFilter
+        }
         onClick={this.handleFilterTagClick} />
     )
   }
+}
+
+FilterItem.propTypes = {
+  onFilterTagClick: PropTypes.func.isRequired,
+  currentFilterTagValue: PropTypes.string.isRequired,
+  currentFilterTagName: PropTypes.string.isRequired,
+  tagFilter: PropTypes.string.isRequired,
+  filterName: PropTypes.string.isRequired,
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './ProductDetails.css'
 import ProductDetsInfo from '../ProductDetsInfo/ProductDetsInfo'
 import ProductDetsGallery from '../ProductDetsGallery/ProductDetsGallery'
@@ -18,4 +19,9 @@ export default function ProductDetails ({ onExitBtnClick, product }) {
       </div>
     </div>
   )
+}
+
+ProductDetails.propTypes = {
+  onExitBtnClick: PropTypes.func.isRequired,
+  product: PropTypes.object.isRequired,
 }

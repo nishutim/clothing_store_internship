@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './ProductDetsGallery.css'
 
 export default class ProductDetsGallery extends Component {
@@ -38,4 +39,8 @@ export default class ProductDetsGallery extends Component {
       </div>
     )
   }
+}
+
+ProductDetsGallery.propTypes = {
+  urls: PropTypes.array.isRequired,
 }

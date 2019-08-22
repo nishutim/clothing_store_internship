@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Filter from '../Filter/Filter'
 import './FilterBar.css'
 
@@ -28,10 +29,17 @@ export default function FilterBar ({ onFilterTagClick, products, currentFilterTa
         onFilterTagClick={onFilterTagClick} />
       <Filter
         filterName="Sort By"
+        filterOptions="sort"
         products={products}
         currentFilterTagValue={currentFilterTags.currentSortTag}
         currentFilterTagName="currentSortTag"
         onFilterTagClick={onFilterTagClick} />
     </div>
   )
+}
+
+FilterBar.propTypes = {
+  onFilterTagClick: PropTypes.func.isRequired,
+  products: PropTypes.array.isRequired,
+  currentFilterTags: PropTypes.object.isRequired,
 }

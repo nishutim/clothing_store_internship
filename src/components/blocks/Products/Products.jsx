@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ProductCard from '../ProductCard/ProductCard'
 import './Products.css'
 
@@ -59,4 +60,11 @@ export default function Products ({
   })
 
   return <div className="products">{items}</div>
+}
+
+Products.propTypes = {
+  products: PropTypes.array.isRequired,
+  filterText: PropTypes.string.isRequired,
+  currentFilterTags: PropTypes.object.isRequired,
+  onProductClick: PropTypes.func.isRequired,
 }

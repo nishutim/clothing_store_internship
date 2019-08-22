@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './Filter.css'
 import FilterItem from '../FilterItem/FilterItem'
 
@@ -11,7 +12,7 @@ export default class Filter extends Component {
     this.handleSomeFilterNameClick = this.handleSomeFilterNameClick.bind(this)
   }
 
-  handleSomeFilterNameClick (e) {
+  handleSomeFilterNameClick () {
     this.setState(state => ({
       showOptions: !state.showOptions,
     }))
@@ -26,7 +27,7 @@ export default class Filter extends Component {
       currentFilterTagName,
       onFilterTagClick,
     } = this.props
-
+    console.log(filterOptions)
     let filters = null
     if (filterName !== 'Sort By') {
       filters = ['All']
@@ -65,4 +66,13 @@ export default class Filter extends Component {
       </div>
     )
   }
+}
+
+Filter.propTypes = {
+  filterName: PropTypes.string.isRequired,
+  products: PropTypes.array.isRequired,
+  filterOptions: PropTypes.string.isRequired,
+  currentFilterTagValue: PropTypes.string.isRequired,
+  currentFilterTagName: PropTypes.string.isRequired,
+  onFilterTagClick: PropTypes.func.isRequired,
 }

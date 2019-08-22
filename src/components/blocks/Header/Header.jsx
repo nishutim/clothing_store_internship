@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import SearchBar from '../../forms/SearchForm/SearchBar'
 import './Header.css'
 
@@ -18,4 +19,9 @@ export default function Header (
       </div>
     </header>
   )
+}
+
+Header.propTypes = {
+  onFilterTextChange: PropTypes.func.isRequired,
+  filterText: PropTypes.string.isRequired,
 }
