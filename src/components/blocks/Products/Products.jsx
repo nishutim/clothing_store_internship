@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ProductCard from '../ProductCard/ProductCard'
-import './Products.css'
+import ProductCard from '@/components/blocks/ProductCard/ProductCard'
+import '@/components/blocks/Products/Products.css'
 
 export default function Products ({
   products,

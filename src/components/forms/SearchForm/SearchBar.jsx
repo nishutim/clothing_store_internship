@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import './SearchBar.css'
+import PropTypes from 'prop-types'
+import '@/components/forms/SearchForm/SearchBar.css'
 
 export default class SearchBar extends Component {
   constructor (props) {
@@ -23,4 +24,9 @@ export default class SearchBar extends Component {
       </form>
     )
   }
+}
+
+SearchBar.propTypes = {
+  onFilterTextChange: PropTypes.func.isRequired,
+  filterText: PropTypes.string.isRequired,
 }

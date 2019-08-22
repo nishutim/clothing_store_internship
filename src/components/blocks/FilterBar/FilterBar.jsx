@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Filter from '../Filter/Filter'
-import './FilterBar.css'
+import Filter from '@/components/blocks/Filter/Filter'
+import '@/components/blocks/FilterBar/FilterBar.css'
 
 export default function FilterBar ({ onFilterTagClick, products, currentFilterTags }) {
   return (

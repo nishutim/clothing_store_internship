@@ -1,9 +1,9 @@
-.product-dets{
+.product-dets {
   margin: 0 auto;
-  width: 95%;
+  width: 80%;
 }
 
-.product-dets-container{
+.product-dets-container {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
@@ -11,7 +11,7 @@
   padding-top: 50px;
 }
 
-.product-dets-exitBtn{
+.product-dets-exitBtn {
   padding: 5px;
   margin-top: 30px;
   border: 1px solid #333;
@@ -21,6 +21,6 @@
   cursor: pointer;
 }
 
-.product-dets-exitBtn:hover{
+.product-dets-exitBtn:hover {
   color: #d91818;
 }

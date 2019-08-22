@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './ProductDetails.css'
-import ProductDetsInfo from '../ProductDetsInfo/ProductDetsInfo'
-import ProductDetsGallery from '../ProductDetsGallery/ProductDetsGallery'
+import '@/components/blocks/ProductDetails/ProductDetails.css'
+import ProductDetsInfo from '@/components/blocks/ProductDetsInfo/ProductDetsInfo'
+import ProductDetsGallery from '@/components/blocks/ProductDetsGallery/ProductDetsGallery'
 
 export default function ProductDetails ({ onExitBtnClick, product }) {
   return (

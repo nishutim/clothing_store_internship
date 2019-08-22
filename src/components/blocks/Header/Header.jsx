@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SearchBar from '../../forms/SearchForm/SearchBar'
-import './Header.css'
+import SearchBar from '@/components/forms/SearchForm/SearchBar'
+import '@/components/blocks/Header/Header.css'
 
 export default function Header (
   {
@@ -10,13 +10,11 @@ export default function Header (
   }
 ) {
   return (
-    <header>
-      <div className="header">
-        <h1 className="header-heading">
+    <header className="header">
+      <h1 className="header-heading">
           VICTIM
-        </h1>
-        <SearchBar onFilterTextChange={onFilterTextChange} filterText={filterText} />
-      </div>
+      </h1>
+      <SearchBar onFilterTextChange={onFilterTextChange} filterText={filterText} />
     </header>
   )
 }

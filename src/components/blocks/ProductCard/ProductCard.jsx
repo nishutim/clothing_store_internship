@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './ProductCard.css'
+import '@/components/blocks/ProductCard/ProductCard.css'
 
 export default function ProductCard ({ _id, title, price, images, onProductClick }) {
   return (

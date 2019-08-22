@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './ProductDetsGallery.css'
+import '@/components/blocks/ProductDetsGallery/ProductDetsGallery.css'
 
 export default class ProductDetsGallery extends Component {
   constructor (props) {

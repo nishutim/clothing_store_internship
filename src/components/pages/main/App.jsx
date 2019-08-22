@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import './App.css'
-import Header from '../../blocks/Header/Header'
-import FilterBar from '../../blocks/FilterBar/FilterBar'
-import Products from '../../blocks/Products/Products'
-import ProductDetails from '../../blocks/ProductDetails/ProductDetails'
+import '@/components/pages/main/App.css'
+import Header from '@/components/blocks/Header/Header'
+import FilterBar from '@/components/blocks/FilterBar/FilterBar'
+import Products from '@/components/blocks/Products/Products'
+import ProductDetails from '@/components/blocks/ProductDetails/ProductDetails'
 
 export default class App extends Component {
   constructor (props) {

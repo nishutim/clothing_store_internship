@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import './ProductDetsInfo.css'
+import '@/components/blocks/ProductDetsInfo/ProductDetsInfo.css'
 
 export default class ProductDetsInfo extends Component {
   constructor (props) {
@@ -71,10 +71,4 @@ export default class ProductDetsInfo extends Component {
 
 ProductDetsInfo.propTypes = {
   productInfo: PropTypes.object.isRequired,
-  title: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  color: PropTypes.array.isRequired,
-  size: PropTypes.array.isRequired,
-  description: PropTypes.string.isRequired,
 }

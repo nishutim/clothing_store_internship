@@ -1,13 +1,13 @@
-.header{
+.header {
   display: flex;
-  align-items: center; 
+  justify-content: space-between;
+  align-items: center;
   padding: 30px;
 }
 
-.header-heading{
-  font-size: 36px; 
-  letter-spacing: 3px; 
-  color: #d91818; 
-  flex:  3
+.header-heading {
+  font-size: 36px;
+  letter-spacing: 3px;
+  color: #d91818;
+  width: 20%;
 }
-

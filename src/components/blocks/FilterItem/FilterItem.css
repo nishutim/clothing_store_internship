@@ -1,6 +1,6 @@
-.filterbar-somefilter-item{
+.filterbar-somefilter-item {
   display: block;
-  font-size: 18px;
+  font-size: 100%;
   border: none;
   background: #fff;
   color: #4f4f4f;
@@ -11,7 +11,6 @@
   border-radius: 5px;
 }
 
-.filterbar-somefilter-item:hover{
+.filterbar-somefilter-item:hover {
   box-shadow: 0 0 5px 1px #bfbfbf;
 }
-
