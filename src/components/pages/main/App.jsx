@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '@/components/pages/main/App.css'
+import { AppContainer } from '@/components/pages/main/styles'
 import Header from '@/components/blocks/Header/Header'
 import FilterBar from '@/components/blocks/FilterBar/FilterBar'
 import Products from '@/components/blocks/Products/Products'
@@ -74,7 +74,7 @@ export default class App extends Component {
       )
     }
     return (
-      <div className="App">
+      <AppContainer className="App">
         <div className="container">
           <Header
             onFilterTextChange={this.handleFilterTextChange}
@@ -89,7 +89,7 @@ export default class App extends Component {
             currentFilterTags={this.state}
             onProductClick={this.handleProductClick} />
         </div>
-      </div>
+      </AppContainer>
     )
   }
 }
