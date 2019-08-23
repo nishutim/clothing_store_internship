@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Filter from '@/components/blocks/Filter/Filter'
-import '@/components/blocks/FilterBar/FilterBar.css'
+import { FilterBarContainer } from '@/components/blocks/FilterBar/styles'
 
 export default function FilterBar ({ onFilterTagClick, products, currentFilterTags }) {
   return (
-    <div className="filterbar">
+    <FilterBarContainer className="filterbar">
       <Filter
         filterName="Categories"
         filterOptions="tags"
@@ -34,7 +34,7 @@ export default function FilterBar ({ onFilterTagClick, products, currentFilterTa
         currentFilterTagValue={currentFilterTags.currentSortTag}
         currentFilterTagName="currentSortTag"
         onFilterTagClick={onFilterTagClick} />
-    </div>
+    </FilterBarContainer>
   )
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '@/components/blocks/FilterItem/FilterItem.css'
+import { FilterOption } from '@/components/blocks/FilterItem/styles'
 
 export default class FilterItem extends Component {
   constructor (props) {
@@ -20,17 +20,18 @@ export default class FilterItem extends Component {
       filterName,
     } = this.props
     return (
-      <input
+      <FilterOption
+        className="filter-options__option"
         style={{
           color: currentFilterTagValue.toLowerCase() === tagFilter.toLowerCase()
             ? '#d91818' : '#4f4f4f',
         }}
-        className="filterbar-somefilter-item"
         name={currentFilterTagName}
         type="button"
         value={
           filterName === 'Colors'
-            ? tagFilter[0].toUpperCase() + tagFilter.slice(1) : tagFilter
+            ? tagFilter[0].toUpperCase() + tagFilter.slice(1)
+            : tagFilter
         }
         onClick={this.handleFilterTagClick} />
     )

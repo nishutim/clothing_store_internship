@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '@/components/blocks/Filter/Filter.css'
+import { FilterBarFilter } from '@/components/blocks/Filter/styles'
 import FilterItem from '@/components/blocks/FilterItem/FilterItem'
 
 export default class Filter extends Component {
@@ -44,15 +44,15 @@ export default class Filter extends Component {
     }
 
     return (
-      <div className={`filterbar-filter ${filterName}`}>
+      <FilterBarFilter className="filterbar-filter">
         <button
-          className="filterbar-filter-name"
+          className="filter-name"
           onClick={this.handleSomeFilterNameClick}
         >
           {filterName}
         </button>
         {this.state.showOptions &&
-          <div className="filterbar-filter-options">
+          <div className="filter-options">
             {filters.map(filter => (
               <FilterItem
                 key={filter}
@@ -63,7 +63,7 @@ export default class Filter extends Component {
                 onFilterTagClick={onFilterTagClick} />
             ))}
           </div>}
-      </div>
+      </FilterBarFilter>
     )
   }
 }

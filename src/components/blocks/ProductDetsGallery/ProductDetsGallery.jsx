@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '@/components/blocks/ProductDetsGallery/ProductDetsGallery.css'
+import { DetailsGallery } from '@/components/blocks/ProductDetsGallery/styles'
 
 export default class ProductDetsGallery extends Component {
   constructor (props) {
@@ -21,22 +21,24 @@ export default class ProductDetsGallery extends Component {
     const { urls } = this.props
     const altImgs = urls.map((url, index) => (
       <img
+        className="gallery-altImgs__item"
         key={url}
         src={url}
-        alt={`pic-${index}`} className="product-dets-gallery-altImgs__item"
+        alt={`pic-${index}`}
         onClick={() => this.handlePicClick(url)} />
     ))
     return (
-      <div className="product-dets-gallery">
-        <div className="product-dets-gallery-altImgs">
+      <DetailsGallery className="details-gallery">
+        <div className="gallery-altImgs">
           {altImgs}
         </div>
-        <div className="product-dets-gallery-mainImg">
+        <div className="gallery-mainImg">
           <img
+            className="gallery-mainImg__item"
             src={this.state.currentMainPic}
-            alt="main pic" className="product-dets-gallery-mainImg__item" />
+            alt="main pic" />
         </div>
-      </div>
+      </DetailsGallery>
     )
   }
 }

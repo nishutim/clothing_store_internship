@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ProductCard from '@/components/blocks/ProductCard/ProductCard'
-import '@/components/blocks/Products/Products.css'
+import { ProductsContainer } from '@/components/blocks/Products/styles'
 
 export default function Products ({
   products,
@@ -59,7 +59,7 @@ export default function Products ({
     )
   })
 
-  return <div className="products">{items}</div>
+  return <ProductsContainer>{items}</ProductsContainer>
 }
 
 Products.propTypes = {

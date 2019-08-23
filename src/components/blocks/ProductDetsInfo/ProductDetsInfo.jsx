@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import '@/components/blocks/ProductDetsInfo/ProductDetsInfo.css'
+import { DetailsInfo } from '@/components/blocks/ProductDetsInfo/styles'
 
 export default class ProductDetsInfo extends Component {
   constructor (props) {
@@ -31,32 +31,32 @@ export default class ProductDetsInfo extends Component {
       top: this.state.showMoreInfo ? '0' : '100px',
     }
     return (
-      <div className="product-dets-info">
-        <h3 className="product-dets-info__name">
+      <DetailsInfo className="details-info">
+        <h3 className="details-info__name">
           {title}
         </h3>
-        <p className="product-dets-info__price">
+        <p className="details-info__price">
           {price} $
         </p>
-        <p className="product-dets-info__rating">
+        <p className="details-info__rating">
           <span>Rating:</span> {rating}
         </p>
-        <p className="product-dets-info__color">
+        <p className="details-info__color">
           <span>Color:</span> {color.join(', ')}
         </p>
-        <p className="product-dets-info__size">
+        <p className="details-info__size">
           <span>Size:</span> {size.join(', ')}
         </p>
-        <div className="product-dets-info-desc">
-          <h4 className="product-dets-info-desc__heading">
+        <div className="details-info-desc">
+          <h4 className="details-info-desc__heading">
             Description
           </h4>
-          <p style={descDescriptionStyle} className="product-dets-info-desc__description">
+          <div className="details-info-desc__description" style={descDescriptionStyle}>
             {description}
-          </p>
-          <div style={descMaskStyle} className="product-dets-info-desc-mask">
+          </div>
+          <div className="details-info-desc-mask" style={descMaskStyle}>
             <button
-              className="product-dets-info-desc-mask__btn"
+              className="details-info-desc-mask__btn"
               onClick={this.handleShowMoreBtnClick}
             >
               {this.state.showMoreInfo && 'HIDE'}
@@ -64,7 +64,7 @@ export default class ProductDetsInfo extends Component {
             </button>
           </div>
         </div>
-      </div>
+      </DetailsInfo>
     )
   }
 }
