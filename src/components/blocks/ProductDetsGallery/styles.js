@@ -24,7 +24,7 @@ export const DetailsGallery = styled.div`
 
   & .gallery-altImgs__item {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 50%;
     cursor: pointer;
   }
 
