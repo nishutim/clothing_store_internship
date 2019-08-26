@@ -7,10 +7,8 @@ export const ProductDetailsContainer = styled.div`
   & .details-exitBtn {
     padding: 5px;
     margin-top: 30px;
-    border: 1px solid #333;
-    color: #333;
+    border: 1px solid #4f4f4f;
     background: transparent;
-    text-transform: uppercase;
     cursor: pointer;
   }
 
@@ -27,25 +25,3 @@ export const ProductDetailsContainer = styled.div`
     padding-top: 50px;
   }
 `
-
-// export const ProductDetsContainer = styled.div`
-//   margin-top: 50px;
-//   display: flex;
-//   justify-content: space-around;
-//   flex-wrap: wrap;
-//   padding-top: 50px;
-
-// `
-// export const ProductDetsExitBtn = styled.button`
-//   padding: 5px;
-//   margin-top: 30px;
-//   border: 1px solid #333;
-//   color: #333;
-//   background: transparent;
-//   text-transform: uppercase;
-//   cursor: pointer;
-
-//   :hover {
-//     color: #d91818;
-//   }
-// `

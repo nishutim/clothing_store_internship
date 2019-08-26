@@ -5,5 +5,4 @@ export const ProductsContainer = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 100px 0; 
-  color: #4f4f4f;
 `

@@ -14,6 +14,10 @@ export const ProductCardContainer = styled.div`
     box-shadow: 0 0 5px 1px #bfbfbf;
   }
 
+  @media only screen and (max-width: 960px) {
+    width: 40%;
+  }
+
   @media only screen and (max-width: 515px) {
     width: 80%;
   }

@@ -5,7 +5,6 @@ export const FilterOption = styled.input`
   font-size: 100%;
   border: none;
   background: #fff;
-  color: #4f4f4f;
   cursor: pointer;
   text-align: left;
   padding: 5px;

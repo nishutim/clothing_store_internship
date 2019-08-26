@@ -9,7 +9,6 @@ export const DetailsGallery = styled.div`
 
   @media only screen and (max-width: 960px) {
     width: 100%;
-    color: #4f4f4f;
     padding: 20px 5px 50px;
     
     & .gallery-altImgs {

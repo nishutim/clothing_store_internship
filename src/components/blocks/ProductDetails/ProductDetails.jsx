@@ -11,7 +11,7 @@ export default function ProductDetails ({ onExitBtnClick, product }) {
         className="details-exitBtn"
         onClick={onExitBtnClick}
       >
-        Back to Shopping
+        BACK TO SHOPPING
       </button>
       <div className="details-container">
         <ProductDetsGallery urls={product.images} />

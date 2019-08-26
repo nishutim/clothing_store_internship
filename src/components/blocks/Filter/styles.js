@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FilterBarFilter = styled.div`
+export const FilterContainer = styled.div`
   position: relative;
   margin: 50px 0 30px;
 
@@ -11,7 +11,6 @@ export const FilterBarFilter = styled.div`
     margin-bottom: 10px;
     padding: 5px;
     font-size: 18px;
-    color: #4f4f4f;
     width: 150px;
     background: transparent;
     border: none;

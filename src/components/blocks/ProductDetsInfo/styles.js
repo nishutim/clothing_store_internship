@@ -9,7 +9,6 @@ export const DetailsInfo = styled.div`
   padding-top: 20px;
   padding-bottom: 50px;
   width: 40%;
-  color: #4f4f4f;
 
   @media only screen and (max-width: 960px) {
     width: 100%;
@@ -30,7 +29,6 @@ export const DetailsInfo = styled.div`
     font-weight: normal;
     letter-spacing: 1px;
     font-size: 24px;
-    color: #333;
   }
 
   & .details-info__price {

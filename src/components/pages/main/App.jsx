@@ -62,20 +62,20 @@ export default class App extends Component {
     if (this.state.showCurrentProductDets) {
       return (
         <div className="App">
-          <div className="container">
+          <AppContainer className="container">
             <Header
               onFilterTextChange={this.handleFilterTextChange}
               filterText={this.state.filterText} />
             <ProductDetails
               onExitBtnClick={this.handleExitBtnClick}
               product={this.state.currentProduct} />
-          </div>
+          </AppContainer>
         </div>
       )
     }
     return (
-      <AppContainer className="App">
-        <div className="container">
+      <div className="App">
+        <AppContainer className="container">
           <Header
             onFilterTextChange={this.handleFilterTextChange}
             filterText={this.state.filterText} />
@@ -88,8 +88,8 @@ export default class App extends Component {
             filterText={this.state.filterText}
             currentFilterTags={this.state}
             onProductClick={this.handleProductClick} />
-        </div>
-      </AppContainer>
+        </AppContainer>
+      </div>
     )
   }
 }

@@ -7,7 +7,6 @@ export const HeaderContainer = styled.header`
   padding: 30px;
 
   & .header-heading {
-    text-align: center;
     font-size: 36px;
     letter-spacing: 3px;
     color: #d91818;
