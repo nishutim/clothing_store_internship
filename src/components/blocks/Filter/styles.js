@@ -7,7 +7,6 @@ export const FilterContainer = styled.div`
   & .filter-name {
     position: relative;
     text-align: left;
-    margin-right: 10px;
     margin-bottom: 10px;
     padding: 5px;
     font-size: 18px;
