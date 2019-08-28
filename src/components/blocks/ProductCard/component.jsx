@@ -2,35 +2,37 @@ import React, { useCallback } from 'react'
 
 import PropTypes from 'prop-types'
 
-import { ProductCardContainer } from './styles'
+import { ProductCardContainer, ProductCardDescription } from './styles'
 
 export default function ProductCard ({ _id, title, price, images, onProductClick }) {
   return (
     <ProductCardContainer
-      className="products-productcard"
       onClick={useCallback(
         () => {
           onProductClick(_id.$oid)
         },
-        [_id.$oid],
+        [_id.$oid, onProductClick],
       )}
     >
       <img
-        className="productcard-img"
         src={images.length ? images[0] : 'Oops, showing some other pic'}
         alt={title} />
-      <div className="productcard-desc">
-        <p className="productcard-desc__title">{title}</p>
-        <p className="productcard-desc__price">{price} $</p>
-      </div>
+      <ProductCardDescription>
+        <p>{title}</p>
+        <p>{price} $</p>
+      </ProductCardDescription>
     </ProductCardContainer>
   )
 }
 
 ProductCard.propTypes = {
-  _id: PropTypes.object.isRequired,
+  _id: PropTypes.shape({
+    $oid: PropTypes.string.isRequired,
+  }).isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  images: PropTypes.array.isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.string.isRequired
+  ).isRequired,
   onProductClick: PropTypes.func.isRequired,
 }

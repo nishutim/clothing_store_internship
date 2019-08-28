@@ -14,7 +14,7 @@ export default function FilterBar ({
   currentSortTag,
 }) {
   return (
-    <FilterBarContainer className="filterbar">
+    <FilterBarContainer>
       <Filter
         filterName="Categories"
         filterOptions="tags"
@@ -49,7 +49,27 @@ export default function FilterBar ({
 
 FilterBar.propTypes = {
   onFilterTagClick: PropTypes.func.isRequired,
-  products: PropTypes.array.isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.object.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      size: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+      images: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+      rating: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+      tags: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+      color: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+    })
+  ).isRequired,
   currentCategorieTag: PropTypes.string.isRequired,
   currentColorTag: PropTypes.string.isRequired,
   currentSizeTag: PropTypes.string.isRequired,

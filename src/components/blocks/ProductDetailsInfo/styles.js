@@ -1,20 +1,20 @@
 import styled from 'styled-components'
 
-export const DetailsInfo = styled.div`
+export const DetailsInfoWrapper = styled.div`
+  padding-top: 20px;
+  padding-bottom: 50px;
+  width: 40%;
+
   * {
     margin-bottom: 15px;
     text-align: justify;
   }
 
-  padding-top: 20px;
-  padding-bottom: 50px;
-  width: 40%;
-
   @media only screen and (max-width: 960px) {
     width: 100%;
   }
 
-  & h4, span {
+  & span {
     font-weight: bold;
     font-size: 16px;
     text-transform: uppercase;
@@ -25,46 +25,47 @@ export const DetailsInfo = styled.div`
     font-size: 20px;
   }
 
-  & .details-info__name {
+  & h2 {
     font-weight: normal;
     letter-spacing: 1px;
     font-size: 24px;
   }
 
-  & .details-info__price {
+  & h3 {
     font-weight: bold;
+    font-size: 20px;
   }
+`
 
-  & .details-info-desc {
-    position: relative;
-  }
+export const Description = styled.div`
+  position: relative;
 
-  & .details-info-desc__description {
+  & div {
     font-size: 16px;
-    height: 100px;
-    overflow: hidden;
+    height: ${props => props.showMoreInfo ? 'auto' : '100px'};
+    overflow: ${props => props.showMoreInfo ? 'auto' : 'hidden'};
   }
+`
 
-  & .details-info-desc-mask {
-    position: absolute;
+export const DescriptionMask = styled.div`
     width: 100%;
-    top: 100px;
+    position: ${props => props.showMoreInfo ? 'relative' : 'absolute'};
+    top: ${props => props.showMoreInfo ? '0' : '100px'};
     background: #fff;
     opacity: 0.9;
     padding: 20px;
-  }
 
-  & .details-info-desc-mask__btn {
+  & button {
     display: block;
     width: 200px;
     text-align: center;
     margin: 0 auto;
     padding: 5px;
     background: #fff;
-    border: 2px solid #4f4f4f;
+    border: 2px solid ${props => props.theme.main.textColor};
   }
   
-  & .details-info-desc-mask__btn:hover {
-    color: #d91818;
+  & button:hover {
+    color: ${props => props.theme.main.hoverColor};
   }
 `

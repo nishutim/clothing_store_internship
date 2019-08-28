@@ -7,8 +7,8 @@ import { HeaderContainer } from './styles'
 
 export default function Header ({ onFilterTextChange, filterText }) {
   return (
-    <HeaderContainer className="header">
-      <h1 className="header-heading">
+    <HeaderContainer>
+      <h1>
           VICTIM
       </h1>
       <SearchForm

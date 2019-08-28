@@ -14,22 +14,15 @@ export default class FilterItem extends Component {
       currentFilterTagValue,
       currentFilterTagName,
       tagFilter,
-      filterName,
     } = this.props
+
     return (
       <FilterOption
-        className="filter-options__option"
-        style={{
-          color: currentFilterTagValue.toLowerCase() === tagFilter.toLowerCase()
-            ? '#d91818' : '#4f4f4f',
-        }}
+        currentFilterTagValue={currentFilterTagValue}
+        tagFilter={tagFilter}
         name={currentFilterTagName}
         type="button"
-        value={
-          filterName === 'Colors'
-            ? tagFilter[0].toUpperCase() + tagFilter.slice(1)
-            : tagFilter
-        }
+        value={tagFilter[0].toUpperCase() + tagFilter.slice(1)}
         onClick={this.handleFilterTagClick} />
     )
   }
@@ -40,5 +33,4 @@ FilterItem.propTypes = {
   currentFilterTagValue: PropTypes.string.isRequired,
   currentFilterTagName: PropTypes.string.isRequired,
   tagFilter: PropTypes.string.isRequired,
-  filterName: PropTypes.string.isRequired,
 }

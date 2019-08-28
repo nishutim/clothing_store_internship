@@ -4,26 +4,41 @@ import PropTypes from 'prop-types'
 
 import ProductDetailsInfo from '@/components/blocks/ProductDetailsInfo/component'
 import ProductDetailsGallery from '@/components/blocks/ProductDetailsGallery/component'
-import { ProductDetailsContainer } from './styles'
+import { ProductDetailsWrapper, ProductDetailsContainer } from './styles'
 
 export default function ProductDetails ({ onExitBtnClick, product }) {
   return (
-    <ProductDetailsContainer className="product-details">
-      <button
-        className="details-exitBtn"
-        onClick={onExitBtnClick}
-      >
+    <ProductDetailsWrapper>
+      <button onClick={onExitBtnClick}>
         BACK TO SHOPPING
       </button>
-      <div className="details-container">
+      <ProductDetailsContainer>
         <ProductDetailsGallery productInfo={product} />
         <ProductDetailsInfo productInfo={product} />
-      </div>
-    </ProductDetailsContainer>
+      </ProductDetailsContainer>
+    </ProductDetailsWrapper>
   )
 }
 
 ProductDetails.propTypes = {
   onExitBtnClick: PropTypes.func.isRequired,
-  product: PropTypes.object.isRequired,
+  product: PropTypes.shape({
+    _id: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    size: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+    rating: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+    color: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+  }).isRequired,
 }

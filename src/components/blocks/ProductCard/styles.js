@@ -11,7 +11,7 @@ export const ProductCardContainer = styled.div`
 
   :hover{
     cursor: pointer;
-    box-shadow: 0 0 5px 1px #bfbfbf;
+    box-shadow: 0 0 5px 1px ${props => props.theme.main.boxShadowColor};
   }
 
   @media only screen and (max-width: 960px) {
@@ -22,20 +22,20 @@ export const ProductCardContainer = styled.div`
     width: 80%;
   }
 
-  & .productcard-img {
+  & img {
     display: block;
     width: 100%;
     margin-bottom: 10px;
   }
+`
 
-  & .productcard-desc__title{
-    line-height: 1.15em;
-    margin-bottom: 5px;
-    padding-left: 10px;
-  }
-  
-  & .productcard-desc__price{
-    font-weight: bold;
-    padding-left: 10px;
-  }
+export const ProductCardDescription = styled.div`
+& p {
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+& p:last-child {
+  font-weight: bold;
+}
 `

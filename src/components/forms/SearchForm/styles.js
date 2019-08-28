@@ -5,7 +5,7 @@ export const SearchBar = styled.form`
   width: 40%;
   min-width: 100px;
 
-  & .searchbar__input {
+  & input {
     display: block;
     width: 100%;
     border-radius: 10px;

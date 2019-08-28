@@ -7,9 +7,9 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding: 30px;
 
-  & .header-heading {
+  & h1 {
     font-size: 36px;
     letter-spacing: 3px;
-    color: #d91818;
+    color: ${props => props.theme.main.hoverColor};
   }
 `

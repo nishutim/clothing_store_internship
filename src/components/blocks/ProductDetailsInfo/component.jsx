@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
 
-import { DetailsInfo } from './styles'
+import { DetailsInfoWrapper, Description, DescriptionMask } from './styles'
 
-export default class ProductDetsInfo extends Component {
+export default class ProductDetailsInfo extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -23,55 +23,60 @@ export default class ProductDetsInfo extends Component {
     const { title, price, rating, color, size, description } = productInfo
     const { showMoreInfo } = this.state
 
-    const descDescriptionStyle = {
-      overflow: this.state.showMoreInfo ? 'auto' : 'hidden',
-      height: this.state.showMoreInfo ? 'auto' : '100px',
-    }
-
-    const descMaskStyle = {
-      position: this.state.showMoreInfo ? 'relative' : 'absolute',
-      top: this.state.showMoreInfo ? '0' : '100px',
-    }
-
     return (
-      <DetailsInfo className="details-info">
-        <h2 className="details-info__name">
+      <DetailsInfoWrapper>
+        <h2>
           {title}
         </h2>
-        <p className="details-info__price">
+        <h3>
           {price} $
-        </p>
-        <p className="details-info__rating">
+        </h3>
+        <p>
           <span>Rating:</span> {rating}
         </p>
-        <p className="details-info__color">
+        <p>
           <span>Color:</span> {color.join(', ')}
         </p>
-        <p className="details-info__size">
+        <p>
           <span>Size:</span> {size.join(', ')}
         </p>
-        <div className="details-info-desc">
-          <p className="details-info-desc__heading">
+        <Description showMoreInfo={showMoreInfo}>
+          <p>
             Description
           </p>
-          <div className="details-info-desc__description" style={descDescriptionStyle}>
+          <div>
             {description}
           </div>
-          <div className="details-info-desc-mask" style={descMaskStyle}>
-            <button
-              className="details-info-desc-mask__btn"
-              onClick={this.handleShowMoreBtnClick}
-            >
+          <DescriptionMask showMoreInfo={showMoreInfo}>
+            <button onClick={this.handleShowMoreBtnClick}>
               {showMoreInfo && 'HIDE'}
               {showMoreInfo === false && 'SHOW MORE'}
             </button>
-          </div>
-        </div>
-      </DetailsInfo>
+          </DescriptionMask>
+        </Description>
+      </DetailsInfoWrapper>
     )
   }
 }
 
-ProductDetsInfo.propTypes = {
-  productInfo: PropTypes.object.isRequired,
+ProductDetailsInfo.propTypes = {
+  productInfo: PropTypes.shape({
+    _id: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    size: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+    rating: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    tags: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+    color: PropTypes.arrayOf(
+      PropTypes.string.isRequired
+    ).isRequired,
+  }).isRequired,
 }

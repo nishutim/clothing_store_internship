@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const DetailsGallery = styled.div`
+export const DetailsGalleryWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -10,29 +10,29 @@ export const DetailsGallery = styled.div`
   @media only screen and (max-width: 960px) {
     width: 100%;
     padding: 20px 5px 50px;
-    
-    & .gallery-altImgs {
-      margin-right: 5%;
-    }
+  }
+`
+
+export const AltImgs = styled.div`
+  width: 10%;
+  max-width: 100px;
+  margin-right: 10%;
+
+  @media only screen and (max-width: 960px) {    
+    margin-right: 5%;
   }
 
-  & .gallery-altImgs {
-    width: 10%;
-    max-width: 100px;
-    margin-right: 10%;
-  }
-
-  & .gallery-altImgs__item {
+  & img {
     width: 100%;
     margin-bottom: 50%;
     cursor: pointer;
   }
+`
 
-  & .gallery-mainImg {
-    width: 70%;
-  }
+export const MainImgWrapper = styled.div`
+  width: 70%;
 
-  & .gallery-mainImg__item {
+  & img {
     width: 100%;
   }
 `

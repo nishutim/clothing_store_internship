@@ -4,7 +4,7 @@ export const FilterContainer = styled.div`
   position: relative;
   margin: 50px 0 30px;
 
-  & .filter-name {
+  & button {
     position: relative;
     text-align: left;
     margin-bottom: 10px;
@@ -17,7 +17,7 @@ export const FilterContainer = styled.div`
     cursor: pointer;
   }
 
-  & .filter-name::after {
+  & button::after {
     content: "›" ;
     position: absolute;
     font-size: 20px;
@@ -25,11 +25,11 @@ export const FilterContainer = styled.div`
     transform: rotate(90deg);
   }
 
-  & .filter-name:hover {
-    color: #d91818;
+  & button:hover {
+    color: ${props => props.theme.main.hoverColor};
   }
 
-  & .filter-options {
+  & div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,8 +37,8 @@ export const FilterContainer = styled.div`
     position: absolute;
     top: 33px;
     padding: 5px 5px 0px;
-    background: #f2f2f2;
-    box-shadow: 0 0 10px 2px #bfbfbf;
+    background: ${props => props.theme.main.filterOptionsBg};
+    box-shadow: 0 0 10px 2px ${props => props.theme.main.boxShadowColor};
     z-index: 1; 
   }
 `

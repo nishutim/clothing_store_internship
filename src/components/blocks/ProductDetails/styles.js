@@ -1,27 +1,27 @@
 import styled from 'styled-components'
 
-export const ProductDetailsContainer = styled.div`
+export const ProductDetailsWrapper = styled.div`
   margin: 0 auto;
   width: 80%;
 
-  & .details-exitBtn {
+  & button {
     padding: 5px;
     margin-top: 30px;
-    border: 1px solid #4f4f4f;
+    border: 1px solid ${props => props.theme.main.textColor};
     background: transparent;
     cursor: pointer;
   }
 
-  & .details-exitBtn:hover {
-    color: #d91818;
+  & button:hover {
+    color: ${props => props.theme.main.hoverColor};
  }
+`
 
-  & .details-container {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding-top: 50px;
-  }
+export const ProductDetailsContainer = styled.div`
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding-top: 50px;
 `

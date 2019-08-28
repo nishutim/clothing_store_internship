@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { getFilters } from '@/utils/getFilters'
+
 import FilterItem from '@/components/blocks/FilterItem/component'
 import { FilterContainer } from './styles'
 
@@ -32,15 +33,12 @@ export default class Filter extends Component {
     const { showOptions } = this.state
 
     return (
-      <FilterContainer className="filterbar-filter">
-        <button
-          className="filter-name"
-          onClick={this.handleSomeFilterNameClick}
-        >
+      <FilterContainer>
+        <button onClick={this.handleSomeFilterNameClick}>
           {filterName}
         </button>
         {showOptions &&
-          <div className="filter-options">
+          <div>
             {getFilters(filterName, products, filterOptions)
               .map(filter => (
                 <FilterItem
@@ -59,7 +57,27 @@ export default class Filter extends Component {
 
 Filter.propTypes = {
   filterName: PropTypes.string.isRequired,
-  products: PropTypes.array.isRequired,
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.object.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      size: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+      images: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+      rating: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+      tags: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+      color: PropTypes.arrayOf(
+        PropTypes.string.isRequired
+      ).isRequired,
+    })
+  ).isRequired,
   filterOptions: PropTypes.string.isRequired,
   currentFilterTagValue: PropTypes.string.isRequired,
   currentFilterTagName: PropTypes.string.isRequired,
