@@ -8,6 +8,7 @@ import {
   FILTER_PRODUCTS,
   CLICK_PRODUCT,
   CLICK_EXIT_BUTTON,
+  CLICK_FILTER_NAME,
 } from '@/constants'
 
 export const fetchProductsRequest = () => {
@@ -69,5 +70,11 @@ export const clickProduct = id => {
 export const clickExitButton = () => {
   return {
     type: CLICK_EXIT_BUTTON,
+  }
+}
+
+export const clickFilterName = () => {
+  return {
+    type: CLICK_FILTER_NAME,
   }
 }

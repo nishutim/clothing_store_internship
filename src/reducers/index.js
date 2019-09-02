@@ -6,6 +6,7 @@ import {
   CHANGE_FILTER_TAG,
   CLICK_PRODUCT,
   CLICK_EXIT_BUTTON,
+  CLICK_FILTER_NAME,
 } from '@/constants'
 
 const initialState = {
@@ -18,6 +19,7 @@ const initialState = {
   currentSizeTag: 'All',
   currentSortTag: 'Our Picks',
   currentProduct: {},
+  showOptions: false,
   showProductDetails: false,
 }
 
@@ -43,6 +45,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         searchText: action.payload,
+      }
+    case CLICK_FILTER_NAME:
+      return {
+        ...state,
+        showOptions: !state.showOptions,
       }
     case CHANGE_FILTER_TAG:
       return {

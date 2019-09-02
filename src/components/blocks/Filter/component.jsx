@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import PropTypes from 'prop-types'
 
@@ -7,49 +7,35 @@ import { getFilters } from '@/utils/getFilters'
 import FilterItemContainer from '@/components/blocks/FilterItem'
 import { FilterContainer } from './styles'
 
-export default class Filter extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      showOptions: false,
-    }
+export default function Filter (
+  {
+    filterName,
+    filterOptions,
+    currentFilterTagValue,
+    currentFilterTagName,
+    products,
+    clickFilterName,
+    showOptions,
   }
-
-  handleFilterNameClick = () => {
-    this.setState(prevState => ({
-      showOptions: !prevState.showOptions,
-    }))
-  }
-
-  render () {
-    const {
-      filterName,
-      filterOptions,
-      currentFilterTagValue,
-      currentFilterTagName,
-      products,
-    } = this.props
-    const { showOptions } = this.state
-
-    return (
-      <FilterContainer>
-        <button onClick={this.handleFilterNameClick}>
-          {filterName}
-        </button>
-        {showOptions &&
-          <div>
-            {getFilters(filterName, products, filterOptions)
-              .map(filter => (
-                <FilterItemContainer
-                  key={filter}
-                  tagFilter={filter}
-                  currentFilterTagValue={currentFilterTagValue}
-                  currentFilterTagName={currentFilterTagName} />
-              ))}
-          </div>}
-      </FilterContainer>
-    )
-  }
+) {
+  return (
+    <FilterContainer>
+      <button onClick={clickFilterName}>
+        {filterName}
+      </button>
+      {showOptions &&
+        <div>
+          {getFilters(filterName, products, filterOptions)
+            .map(filter => (
+              <FilterItemContainer
+                key={filter}
+                tagFilter={filter}
+                currentFilterTagValue={currentFilterTagValue}
+                currentFilterTagName={currentFilterTagName} />
+            ))}
+        </div>}
+    </FilterContainer>
+  )
 }
 
 Filter.propTypes = {
@@ -78,4 +64,6 @@ Filter.propTypes = {
       ).isRequired,
     })
   ).isRequired,
+  clickFilterName: PropTypes.func.isRequired,
+  showOptions: PropTypes.bool.isRequired,
 }
