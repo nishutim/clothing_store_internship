@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import ProductDetailsInfo from '@/components/blocks/ProductDetailsInfo'
 import ProductDetailsGallery from '@/components/blocks/ProductDetailsGallery'
-import { ProductDetailsWrapper, ProductDetailsContainer } from './styles'
+import { ProductDetailsWrapper } from './styles'
 
 export default function ProductDetails ({ clickExitButton, product }) {
   return (
@@ -12,10 +12,10 @@ export default function ProductDetails ({ clickExitButton, product }) {
       <button onClick={clickExitButton}>
         BACK TO SHOPPING
       </button>
-      <ProductDetailsContainer>
+      <div>
         <ProductDetailsGallery productInfo={product} />
         <ProductDetailsInfo productInfo={product} />
-      </ProductDetailsContainer>
+      </div>
     </ProductDetailsWrapper>
   )
 }
