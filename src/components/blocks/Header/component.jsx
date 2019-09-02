@@ -1,24 +1,15 @@
 import React from 'react'
 
-import PropTypes from 'prop-types'
-
-import SearchForm from '@/components/forms/SearchForm/component'
+import SearchFormContainer from '@/components/forms/SearchForm'
 import { HeaderContainer } from './styles'
 
-export default function Header ({ onFilterTextChange, filterText }) {
+export default function Header () {
   return (
     <HeaderContainer>
       <h1>
           VICTIM
       </h1>
-      <SearchForm
-        onFilterTextChange={onFilterTextChange}
-        filterText={filterText} />
+      <SearchFormContainer />
     </HeaderContainer>
   )
-}
-
-Header.propTypes = {
-  onFilterTextChange: PropTypes.func.isRequired,
-  filterText: PropTypes.string.isRequired,
 }

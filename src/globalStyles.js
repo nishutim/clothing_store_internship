@@ -2,12 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-    color: #4f4f4f;
+    font-family: ${props => props.theme.main.fontFamily};
+    margin: ${props => props.theme.main.margin};
+    padding: ${props => props.theme.main.padding};
+    text-decoration: ${props => props.theme.main.textDecoration};
+    box-sizing: ${props => props.theme.main.boxSizing};
+    color: ${props => props.theme.main.textColor};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }

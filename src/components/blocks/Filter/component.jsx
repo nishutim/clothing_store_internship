@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import { getFilters } from '@/utils/getFilters'
 
-import FilterItem from '@/components/blocks/FilterItem/component'
+import FilterItemContainer from '@/components/blocks/FilterItem'
 import { FilterContainer } from './styles'
 
 export default class Filter extends Component {
@@ -15,7 +15,7 @@ export default class Filter extends Component {
     }
   }
 
-  handleSomeFilterNameClick = () => {
+  handleFilterNameClick = () => {
     this.setState(prevState => ({
       showOptions: !prevState.showOptions,
     }))
@@ -24,30 +24,27 @@ export default class Filter extends Component {
   render () {
     const {
       filterName,
-      products,
       filterOptions,
       currentFilterTagValue,
       currentFilterTagName,
-      onFilterTagClick,
+      products,
     } = this.props
     const { showOptions } = this.state
 
     return (
       <FilterContainer>
-        <button onClick={this.handleSomeFilterNameClick}>
+        <button onClick={this.handleFilterNameClick}>
           {filterName}
         </button>
         {showOptions &&
           <div>
             {getFilters(filterName, products, filterOptions)
               .map(filter => (
-                <FilterItem
+                <FilterItemContainer
                   key={filter}
                   tagFilter={filter}
-                  filterName={filterName}
                   currentFilterTagValue={currentFilterTagValue}
-                  currentFilterTagName={currentFilterTagName}
-                  onFilterTagClick={onFilterTagClick} />
+                  currentFilterTagName={currentFilterTagName} />
               ))}
           </div>}
       </FilterContainer>
@@ -57,6 +54,9 @@ export default class Filter extends Component {
 
 Filter.propTypes = {
   filterName: PropTypes.string.isRequired,
+  filterOptions: PropTypes.string.isRequired,
+  currentFilterTagValue: PropTypes.string.isRequired,
+  currentFilterTagName: PropTypes.string.isRequired,
   products: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.object.isRequired,
@@ -78,8 +78,4 @@ Filter.propTypes = {
       ).isRequired,
     })
   ).isRequired,
-  filterOptions: PropTypes.string.isRequired,
-  currentFilterTagValue: PropTypes.string.isRequired,
-  currentFilterTagName: PropTypes.string.isRequired,
-  onFilterTagClick: PropTypes.func.isRequired,
 }

@@ -1,3 +1,3 @@
-import SearchForm from './component'
+import SearchFormContainer from './container'
 
-export default SearchForm
+export default SearchFormContainer

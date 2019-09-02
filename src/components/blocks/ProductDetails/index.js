@@ -1,3 +1,3 @@
-import ProductDetails from './component'
+import ProductDetailsContainer from './container'
 
-export default ProductDetails
+export default ProductDetailsContainer

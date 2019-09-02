@@ -6,10 +6,10 @@ import ProductDetailsInfo from '@/components/blocks/ProductDetailsInfo/component
 import ProductDetailsGallery from '@/components/blocks/ProductDetailsGallery/component'
 import { ProductDetailsWrapper, ProductDetailsContainer } from './styles'
 
-export default function ProductDetails ({ onExitBtnClick, product }) {
+export default function ProductDetails ({ clickExitButton, product }) {
   return (
     <ProductDetailsWrapper>
-      <button onClick={onExitBtnClick}>
+      <button onClick={clickExitButton}>
         BACK TO SHOPPING
       </button>
       <ProductDetailsContainer>
@@ -21,7 +21,7 @@ export default function ProductDetails ({ onExitBtnClick, product }) {
 }
 
 ProductDetails.propTypes = {
-  onExitBtnClick: PropTypes.func.isRequired,
+  clickExitButton: PropTypes.func.isRequired,
   product: PropTypes.shape({
     _id: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,

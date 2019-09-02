@@ -5,35 +5,33 @@ import PropTypes from 'prop-types'
 import { sortProducts } from '@/utils/sortProducts'
 import { filterProducts } from '@/utils/filterProducts'
 
-import ProductCard from '@/components/blocks/ProductCard/component'
-import { ProductsContainer } from './styles'
+import ProductCardContainer from '@/components/blocks/ProductCard'
+import { ProductsWrapper } from './styles'
 
 export default function Products ({
   products,
-  filterText,
+  searchText,
   currentCategorieTag,
   currentColorTag,
   currentSizeTag,
   currentSortTag,
-  onProductClick,
 }) {
   return (
-    <ProductsContainer>
+    <ProductsWrapper>
       {sortProducts(currentSortTag, products)
         .filter(product => filterProducts(
           product,
-          filterText,
+          searchText,
           currentCategorieTag,
           currentColorTag,
           currentSizeTag,
         ))
         .map(product => (
-          <ProductCard
+          <ProductCardContainer
             key={product._id.$oid}
-            onProductClick={onProductClick}
             {...product} />
         ))}
-    </ProductsContainer>
+    </ProductsWrapper>
   )
 }
 
@@ -59,10 +57,9 @@ Products.propTypes = {
       ).isRequired,
     })
   ).isRequired,
-  filterText: PropTypes.string.isRequired,
+  searchText: PropTypes.string.isRequired,
   currentCategorieTag: PropTypes.string.isRequired,
   currentColorTag: PropTypes.string.isRequired,
   currentSizeTag: PropTypes.string.isRequired,
   currentSortTag: PropTypes.string.isRequired,
-  onProductClick: PropTypes.func.isRequired,
 }

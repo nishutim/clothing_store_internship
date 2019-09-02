@@ -1,3 +1,3 @@
-import FilterItem from './component'
+import FilterItemContainer from './container'
 
-export default FilterItem
+export default FilterItemContainer

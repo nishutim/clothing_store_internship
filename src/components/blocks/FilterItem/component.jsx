@@ -1,35 +1,32 @@
-import React, { Component } from 'react'
+import React, { useCallback } from 'react'
 
 import PropTypes from 'prop-types'
 
 import { FilterOption } from './styles'
 
-export default class FilterItem extends Component {
-  handleFilterTagClick = e => {
-    this.props.onFilterTagClick(e.target.value, e.target.name)
+export default function FilterItem (
+  {
+    currentFilterTagValue,
+    currentFilterTagName,
+    tagFilter,
+    changeFilterTag,
   }
 
-  render () {
-    const {
-      currentFilterTagValue,
-      currentFilterTagName,
-      tagFilter,
-    } = this.props
-
-    return (
-      <FilterOption
-        currentFilterTagValue={currentFilterTagValue}
-        tagFilter={tagFilter}
-        name={currentFilterTagName}
-        type="button"
-        value={tagFilter[0].toUpperCase() + tagFilter.slice(1)}
-        onClick={this.handleFilterTagClick} />
-    )
-  }
+) {
+  return (
+    <FilterOption
+      currentFilterTagValue={currentFilterTagValue}
+      name={currentFilterTagName}
+      tagFilter={tagFilter}
+      type="button"
+      value={tagFilter[0].toUpperCase() + tagFilter.slice(1)}
+      onClick={useCallback(e =>
+        changeFilterTag(e.target.value, e.target.name), [changeFilterTag])} />
+  )
 }
 
 FilterItem.propTypes = {
-  onFilterTagClick: PropTypes.func.isRequired,
+  changeFilterTag: PropTypes.func.isRequired,
   currentFilterTagValue: PropTypes.string.isRequired,
   currentFilterTagName: PropTypes.string.isRequired,
   tagFilter: PropTypes.string.isRequired,

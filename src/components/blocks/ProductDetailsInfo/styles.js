@@ -53,7 +53,6 @@ export const DescriptionMask = styled.div`
     top: ${props => props.showMoreInfo ? '0' : '100px'};
     background: #fff;
     opacity: 0.9;
-    padding: 20px;
 
   & button {
     display: block;

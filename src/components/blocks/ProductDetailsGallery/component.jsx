@@ -8,7 +8,10 @@ export default class ProductDetailsGallery extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentMainPic: this.props.productInfo.images[0],
+      currentMainPic:
+        this.props.productInfo.images.length
+          ? this.props.productInfo.images[0]
+          : 'Oops, showing some other picture',
     }
   }
 

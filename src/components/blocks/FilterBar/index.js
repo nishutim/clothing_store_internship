@@ -1,3 +1,3 @@
-import FilterBar from './component'
+import FilterBarContainer from './container'
 
-export default FilterBar
+export default FilterBarContainer

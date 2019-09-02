@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ProductsContainer = styled.div`
+export const ProductsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

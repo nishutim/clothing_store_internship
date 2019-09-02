@@ -1,6 +1,6 @@
 export function filterProducts (
   product,
-  filterText,
+  searchText,
   currentCategorieTag,
   currentColorTag,
   currentSizeTag,
@@ -24,7 +24,7 @@ export function filterProducts (
     return false
   }
   if (
-    product.title.toLowerCase().indexOf(filterText.toLowerCase().trim()) ===
+    product.title.toLowerCase().indexOf(searchText.toLowerCase().trim()) ===
     -1
   ) {
     return false
