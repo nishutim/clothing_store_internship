@@ -2,8 +2,8 @@ export function filterProducts (
   product,
   searchText,
   currentCategorieTag,
-  currentColorTag,
   currentSizeTag,
+  currentColorTag,
 ) {
   if (
     product.tags.indexOf(currentCategorieTag) === -1 &&

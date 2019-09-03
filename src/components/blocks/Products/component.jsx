@@ -11,20 +11,17 @@ import { ProductsWrapper } from './styles'
 export default function Products ({
   products,
   searchText,
-  currentCategorieTag,
-  currentColorTag,
-  currentSizeTag,
-  currentSortTag,
+  filters,
 }) {
   return (
     <ProductsWrapper>
-      {sortProducts(currentSortTag, products)
+      {sortProducts(filters[3].currentTag.value, products)
         .filter(product => filterProducts(
           product,
           searchText,
-          currentCategorieTag,
-          currentColorTag,
-          currentSizeTag,
+          filters[0].currentTag.value,
+          filters[1].currentTag.value,
+          filters[2].currentTag.value,
         ))
         .map(product => (
           <ProductCardContainer
@@ -58,8 +55,14 @@ Products.propTypes = {
     })
   ).isRequired,
   searchText: PropTypes.string.isRequired,
-  currentCategorieTag: PropTypes.string.isRequired,
-  currentColorTag: PropTypes.string.isRequired,
-  currentSizeTag: PropTypes.string.isRequired,
-  currentSortTag: PropTypes.string.isRequired,
+  filters: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      filterOptions: PropTypes.string.isRequired,
+      currentTag: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired,
+      }).isRequired,
+    })
+  ).isRequired,
 }

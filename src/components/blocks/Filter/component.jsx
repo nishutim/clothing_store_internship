@@ -24,7 +24,7 @@ export default class Filter extends Component {
   render () {
     const { showOptions } = this.state
     const {
-      filterName,
+      title,
       filterOptions,
       currentFilterTagValue,
       currentFilterTagName,
@@ -34,11 +34,11 @@ export default class Filter extends Component {
     return (
       <FilterContainer>
         <button onClick={this.handleFilterNameClick}>
-          {filterName}
+          {title}
         </button>
         {showOptions &&
           <div>
-            {getFilters(filterName, products, filterOptions)
+            {getFilters(currentFilterTagName, products, filterOptions)
               .map(filter => (
                 <FilterItemContainer
                   key={filter}
@@ -53,7 +53,7 @@ export default class Filter extends Component {
 }
 
 Filter.propTypes = {
-  filterName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   filterOptions: PropTypes.string.isRequired,
   currentFilterTagValue: PropTypes.string.isRequired,
   currentFilterTagName: PropTypes.string.isRequired,

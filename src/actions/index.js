@@ -37,12 +37,12 @@ export const searchProducts = searchText => {
   }
 }
 
-export const changeFilterTag = (value, currentNameTag) => {
+export const changeFilterTag = (value, name) => {
   return {
     type: CHANGE_FILTER_TAG,
     payload: {
       value: value,
-      currentNameTag: currentNameTag,
+      name: name,
     },
   }
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FilterBarContainer = styled.div`
+export const FilterBarWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

@@ -13,10 +13,28 @@ const initialState = {
   error: null,
   products: [],
   searchText: '',
-  currentCategorieTag: 'All',
-  currentColorTag: 'All',
-  currentSizeTag: 'All',
-  currentSortTag: 'Our Picks',
+  filters: [
+    {
+      title: 'Categories',
+      filterOptions: 'tags',
+      currentTag: { name: 'CATEGORIE', value: 'All' },
+    },
+    {
+      title: 'Sizes',
+      filterOptions: 'size',
+      currentTag: { name: 'SIZE', value: 'All' },
+    },
+    {
+      title: 'Colors',
+      filterOptions: 'color',
+      currentTag: { name: 'COLOR', value: 'All' },
+    },
+    {
+      title: 'Sort',
+      filterOptions: 'sort',
+      currentTag: { name: 'SORT', value: 'Our Picks' },
+    },
+  ],
   currentProduct: {},
   showProductDetails: false,
 }
@@ -47,7 +65,15 @@ const reducer = (state = initialState, action) => {
     case CHANGE_FILTER_TAG:
       return {
         ...state,
-        [action.payload.currentNameTag]: action.payload.value,
+        filters: [...state.filters].map(filter => {
+          if (filter.currentTag.name !== action.payload.name) {
+            return filter
+          }
+          return {
+            ...filter,
+            currentTag: { ...filter.currentTag, value: action.payload.value },
+          }
+        }),
       }
     case CLICK_PRODUCT:
       return {

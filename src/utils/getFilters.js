@@ -1,5 +1,5 @@
-export function getFilters (filterName, products, filterOptions) {
-  if (filterName !== 'Sort By') {
+export function getFilters (currentFilterTagName, products, filterOptions) {
+  if (currentFilterTagName !== 'SORT') {
     const filters = ['All']
     products.forEach(product => {
       product[filterOptions].forEach(filterOption => {
