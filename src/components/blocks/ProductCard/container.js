@@ -1,14 +1,14 @@
 import { connect } from 'react-redux'
 
 import ProductCard from './component'
-import { clickProduct } from '@/actions'
+import { selectProduct } from '@/actions'
 
 const mapDispatchToProps = dispatch => ({
-  clickProduct: id => dispatch(clickProduct(id)),
+  showProductDetails: id => dispatch(selectProduct(id)),
 })
 
 const ProductCardContainer = connect(
-  null,
+  undefined,
   mapDispatchToProps
 )(ProductCard)
 

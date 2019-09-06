@@ -5,13 +5,13 @@ import {
   fetchProductsSuccess,
   fetchProductsFailure,
 } from '@/actions'
-import { URL, FETCH_PRODUCTS_REQUEST } from '@/constants'
+import { PRODUCTS_DATA_URL, FETCH_PRODUCTS_REQUEST } from '@/constants'
 import { fetchProducts } from '@/api/fetchProducts'
 
 export function * fetchProductsAsync () {
   try {
     yield put(fetchProductsRequest())
-    const data = yield call(fetchProducts, URL)
+    const data = yield call(fetchProducts, PRODUCTS_DATA_URL)
     yield put(fetchProductsSuccess(data))
   } catch (error) {
     yield put(fetchProductsFailure(error))

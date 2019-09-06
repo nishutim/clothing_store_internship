@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 
 export const ProductDetailsWrapper = styled.div`
-  margin: 0 auto;
+  margin: 
+    ${props => props.theme.main.indents.zero}
+    ${props => props.theme.main.indents.auto};
   width: 80%;
 
   & button {
-    padding: 5px;
-    margin-top: 30px;
+    padding: ${props => props.theme.main.indents.halfXs};
+    margin-top: ${props => props.theme.main.sectionIndents.s};
     border: 1px solid ${props => props.theme.main.textColor};
-    background: transparent;
+    background: ${props => props.theme.main.transparentColor};
     cursor: pointer;
   }
 
@@ -17,11 +19,10 @@ export const ProductDetailsWrapper = styled.div`
  }
 
  & > div {
-    margin-top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding-top: 50px;
+    padding-top: ${props => props.theme.main.sectionIndents.l};
  }
 `

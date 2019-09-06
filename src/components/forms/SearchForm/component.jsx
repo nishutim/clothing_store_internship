@@ -6,7 +6,7 @@ import { SearchBar } from './styles'
 
 export default function SearchForm ({ searchText, searchProducts }) {
   return (
-    <SearchBar onSubmit={e => e.preventDefault()}>
+    <SearchBar>
       <input
         type="text"
         placeholder="Search"

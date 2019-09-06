@@ -4,10 +4,6 @@ import FilterBar from './component'
 
 const mapStateToProps = state => ({
   filters: state.filters,
-  // currentCategorieTag: state.currentCategorieTag,
-  // currentColorTag: state.currentColorTag,
-  // currentSizeTag: state.currentSizeTag,
-  // currentSortTag: state.currentSortTag,
 })
 
 const FilterBarContainer = connect(

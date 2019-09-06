@@ -42,8 +42,8 @@ export const Description = styled.div`
 
   & div {
     font-size: 16px;
-    height: ${props => props.showMoreInfo ? 'auto' : '100px'};
-    overflow: ${props => props.showMoreInfo ? 'auto' : 'hidden'};
+    height: ${props => props.showDetails ? 'auto' : '100px'};
+    overflow: ${props => props.showDetails ? 'auto' : 'hidden'};
   }
 `
 

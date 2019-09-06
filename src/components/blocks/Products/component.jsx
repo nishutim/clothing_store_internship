@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 import { sortProducts } from '@/utils/sortProducts'
 import { filterProducts } from '@/utils/filterProducts'
+import { productShape } from '@/propTypes'
 
 import ProductCardContainer from '@/components/blocks/ProductCard'
 import { ProductsWrapper } from './styles'
@@ -33,27 +34,7 @@ export default function Products ({
 }
 
 Products.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.object.isRequired,
-      title: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      size: PropTypes.arrayOf(
-        PropTypes.string.isRequired
-      ).isRequired,
-      images: PropTypes.arrayOf(
-        PropTypes.string.isRequired
-      ).isRequired,
-      rating: PropTypes.number.isRequired,
-      description: PropTypes.string.isRequired,
-      tags: PropTypes.arrayOf(
-        PropTypes.string.isRequired
-      ).isRequired,
-      color: PropTypes.arrayOf(
-        PropTypes.string.isRequired
-      ).isRequired,
-    })
-  ).isRequired,
+  products: PropTypes.arrayOf(productShape).isRequired,
   searchText: PropTypes.string.isRequired,
   filters: PropTypes.arrayOf(
     PropTypes.shape({

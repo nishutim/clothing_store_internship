@@ -3,13 +3,15 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
-  padding: 30px;
+  flex-wrap: wrap;
+  padding:
+    ${props => props.theme.main.sectionIndents.m} 
+    ${props => props.theme.main.indents.xs};
 
   & h1 {
-    font-size: 36px;
-    letter-spacing: 3px;
+    font-size: ${props => props.theme.main.fontSizes.headerSize};
+    letter-spacing: ${props => props.theme.main.letterSpacing.caps};
     color: ${props => props.theme.main.hoverColor};
   }
 `

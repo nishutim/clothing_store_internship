@@ -6,8 +6,7 @@ import {
   CHANGE_FILTER_TAG,
   SORT_PRODUCTS,
   FILTER_PRODUCTS,
-  CLICK_PRODUCT,
-  CLICK_EXIT_BUTTON,
+  SELECT_PRODUCT,
 } from '@/constants'
 
 export const fetchProductsRequest = () => {
@@ -59,15 +58,9 @@ export const filterProducts = () => {
   }
 }
 
-export const clickProduct = id => {
+export const selectProduct = id => {
   return {
-    type: CLICK_PRODUCT,
+    type: SELECT_PRODUCT,
     payload: id,
-  }
-}
-
-export const clickExitButton = () => {
-  return {
-    type: CLICK_EXIT_BUTTON,
   }
 }

@@ -2,25 +2,24 @@ import styled from 'styled-components'
 
 export const FilterContainer = styled.div`
   position: relative;
-  margin: 50px 0 30px;
+  margin-top: ${props => props.theme.main.sectionIndents.m}; 
+
 
   & button {
     position: relative;
+    font-size: ${props => props.theme.main.fontSizes.l};
     text-align: left;
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 18px;
+    padding: ${props => props.theme.main.indents.halfXs};
     width: 150px;
-    background: transparent;
+    background: ${props => props.theme.main.transparentColor};
     border: none;
-    border-bottom: 1px solid #bfbfbf;
+    border-bottom: 1px solid ${props => props.theme.main.boxShadowColor};
     cursor: pointer;
   }
 
   & button::after {
     content: "›" ;
     position: absolute;
-    font-size: 20px;
     right: 1px;
     transform: rotate(90deg);
   }
@@ -30,13 +29,16 @@ export const FilterContainer = styled.div`
   }
 
   & div {
+    position: absolute;
+    top: 33px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 150px;
-    position: absolute;
-    top: 33px;
-    padding: 5px 5px 0px;
+    padding: 
+      ${props => props.theme.main.indents.halfXs} 
+      ${props => props.theme.main.indents.halfXs} 
+      ${props => props.theme.main.indents.zero};
     background: ${props => props.theme.main.filterOptionsBg};
     box-shadow: 0 0 10px 2px ${props => props.theme.main.boxShadowColor};
     z-index: 1; 

@@ -8,8 +8,8 @@ export const SearchBar = styled.form`
   & input {
     display: block;
     width: 100%;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 16px;
+    border-radius: ${props => props.theme.main.borderRadius.s};
+    padding: ${props => props.theme.main.indents.xs};
+    font-size: ${props => props.theme.main.fontSizes.m};
   }
 `

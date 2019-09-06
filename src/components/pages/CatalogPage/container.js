@@ -1,19 +1,15 @@
 import { connect } from 'react-redux'
 
-import App from './component'
+import CatalogPage from './component'
 import { fetchProductsRequest } from '@/actions'
-
-const mapStateToProps = state => ({
-  showProductDetails: state.showProductDetails,
-})
 
 const mapDispatchToProps = dispatch => ({
   fetchProducts: () => dispatch(fetchProductsRequest()),
 })
 
-const AppContainer = connect(
-  mapStateToProps,
+const CatalogPageContainer = connect(
+  undefined,
   mapDispatchToProps
-)(App)
+)(CatalogPage)
 
-export default AppContainer
+export default CatalogPageContainer

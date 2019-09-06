@@ -1,5 +1,7 @@
+import { SORT } from '@/constants'
+
 export function getFilters (currentFilterTagName, products, filterOptions) {
-  if (currentFilterTagName !== 'SORT') {
+  if (currentFilterTagName !== SORT) {
     const filters = ['All']
     products.forEach(product => {
       product[filterOptions].forEach(filterOption => {

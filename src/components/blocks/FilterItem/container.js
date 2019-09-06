@@ -8,7 +8,7 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const FilterItemContainer = connect(
-  null,
+  undefined,
   mapDispatchToProps
 )(FilterItem)
 

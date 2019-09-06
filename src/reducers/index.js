@@ -4,8 +4,11 @@ import {
   FETCH_PRODUCTS_FAILURE,
   SEARCH_PRODUCTS,
   CHANGE_FILTER_TAG,
-  CLICK_PRODUCT,
-  CLICK_EXIT_BUTTON,
+  SELECT_PRODUCT,
+  CATEGORIE,
+  SIZE,
+  COLOR,
+  SORT,
 } from '@/constants'
 
 const initialState = {
@@ -17,26 +20,25 @@ const initialState = {
     {
       title: 'Categories',
       filterOptions: 'tags',
-      currentTag: { name: 'CATEGORIE', value: 'All' },
+      currentTag: { name: CATEGORIE, value: 'All' },
     },
     {
       title: 'Sizes',
       filterOptions: 'size',
-      currentTag: { name: 'SIZE', value: 'All' },
+      currentTag: { name: SIZE, value: 'All' },
     },
     {
       title: 'Colors',
       filterOptions: 'color',
-      currentTag: { name: 'COLOR', value: 'All' },
+      currentTag: { name: COLOR, value: 'All' },
     },
     {
       title: 'Sort',
       filterOptions: 'sort',
-      currentTag: { name: 'SORT', value: 'Our Picks' },
+      currentTag: { name: SORT, value: 'Our Picks' },
     },
   ],
-  currentProduct: {},
-  showProductDetails: false,
+  selectedProduct: {},
 }
 
 const reducer = (state = initialState, action) => {
@@ -75,17 +77,11 @@ const reducer = (state = initialState, action) => {
           }
         }),
       }
-    case CLICK_PRODUCT:
+    case SELECT_PRODUCT:
       return {
         ...state,
-        currentProduct: [...state.products].filter(product =>
+        selectedProduct: state.products.filter(product =>
           action.payload === product._id.$oid)[0],
-        showProductDetails: true,
-      }
-    case CLICK_EXIT_BUTTON:
-      return {
-        ...state,
-        showProductDetails: false,
       }
     default:
       return state

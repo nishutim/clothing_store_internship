@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import PropTypes from 'prop-types'
+import { productShape } from '@/propTypes'
 
 import { DetailsGalleryWrapper, AltImgs, MainImgWrapper } from './styles'
 
@@ -8,23 +8,23 @@ export default class ProductDetailsGallery extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentMainPic:
-        this.props.productInfo.images.length
-          ? this.props.productInfo.images[0]
+      currentMainPicture:
+        this.props.product.images.length
+          ? this.props.product.images[0]
           : 'Oops, showing some other picture',
     }
   }
 
   handlePicClick = url => {
     this.setState({
-      currentMainPic: url,
+      currentMainPicture: url,
     })
   }
 
   render () {
-    const { currentMainPic } = this.state
-    const { productInfo } = this.props
-    const { title, images } = productInfo
+    const { currentMainPicture } = this.state
+    const { product } = this.props
+    const { title, images } = product
 
     return (
       <DetailsGalleryWrapper>
@@ -40,7 +40,7 @@ export default class ProductDetailsGallery extends Component {
         <MainImgWrapper>
           {images.length
             ? <img
-              src={currentMainPic}
+              src={currentMainPicture}
               alt={title} />
             : <p>Oops, something went wrong!</p>}
         </MainImgWrapper>
@@ -50,23 +50,5 @@ export default class ProductDetailsGallery extends Component {
 }
 
 ProductDetailsGallery.propTypes = {
-  productInfo: PropTypes.shape({
-    _id: PropTypes.object.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    size: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-    images: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-    rating: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-    color: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-  }).isRequired,
+  product: productShape,
 }

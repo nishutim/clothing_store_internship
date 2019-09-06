@@ -1,44 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-import PropTypes from 'prop-types'
+import { productShape } from '@/propTypes'
 
 import ProductDetailsInfo from '@/components/blocks/ProductDetailsInfo'
 import ProductDetailsGallery from '@/components/blocks/ProductDetailsGallery'
 import { ProductDetailsWrapper } from './styles'
 
-export default function ProductDetails ({ clickExitButton, product }) {
+export default function ProductDetails ({ product }) {
   return (
     <ProductDetailsWrapper>
-      <button onClick={clickExitButton}>
+      <Link to="/">
+        <button>
         BACK TO SHOPPING
-      </button>
+        </button>
+      </Link>
       <div>
-        <ProductDetailsGallery productInfo={product} />
-        <ProductDetailsInfo productInfo={product} />
+        <ProductDetailsGallery product={product} />
+        <ProductDetailsInfo product={product} />
       </div>
     </ProductDetailsWrapper>
   )
 }
 
 ProductDetails.propTypes = {
-  clickExitButton: PropTypes.func.isRequired,
-  product: PropTypes.shape({
-    _id: PropTypes.object.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    size: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-    images: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-    rating: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-    color: PropTypes.arrayOf(
-      PropTypes.string.isRequired
-    ).isRequired,
-  }).isRequired,
+  product: productShape,
 }

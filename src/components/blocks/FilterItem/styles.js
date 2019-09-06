@@ -2,19 +2,18 @@ import styled from 'styled-components'
 
 export const FilterOption = styled.input`
   display: block;
-  font-size: 100%;
+  font-size: ${props => props.theme.main.fontSizes.s};
   border: none;
   color: ${props =>
     props.currentFilterTagValue.toLowerCase() ===
     props.tagFilter.toLowerCase()
-    ? '#d91818' : '#4f4f4f'
-  };
-  background: #fff;
+    ? props.theme.main.hoverColor : props.theme.main.textColor};
+  background: ${props => props.theme.main.whiteColor};
   cursor: pointer;
   text-align: left;
-  padding: 5px;
-  margin-bottom: 5px;
-  border-radius: 5px;
+  padding: ${props => props.theme.main.indents.halfXs};
+  margin-bottom: ${props => props.theme.main.indents.halfXs};
+  border-radius: ${props => props.theme.main.borderRadius.xs};
 
   :hover {
     box-shadow: 0 0 5px 1px ${props => props.theme.main.boxShadowColor};

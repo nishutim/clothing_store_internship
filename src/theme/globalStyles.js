@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
   * {
     font-family: ${props => props.theme.main.fontFamily};
-    margin: ${props => props.theme.main.margin};
-    padding: ${props => props.theme.main.padding};
+    margin: ${props => props.theme.main.indents.zero};
+    padding: ${props => props.theme.main.indents.zero};
     text-decoration: ${props => props.theme.main.textDecoration};
     box-sizing: ${props => props.theme.main.boxSizing};
     color: ${props => props.theme.main.textColor};

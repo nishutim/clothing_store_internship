@@ -9,7 +9,10 @@ export const DetailsGalleryWrapper = styled.div`
 
   @media only screen and (max-width: 960px) {
     width: 100%;
-    padding: 20px 5px 50px;
+    padding: 
+      ${props => props.theme.main.indents.s} 
+      ${props => props.theme.main.indents.halfXs} 
+      ${props => props.theme.main.sectionIndents.m};
   }
 `
 

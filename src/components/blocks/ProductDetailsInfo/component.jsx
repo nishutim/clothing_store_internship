@@ -2,26 +2,27 @@ import React, { Component } from 'react'
 
 import PropTypes from 'prop-types'
 
+import { HIDE, SHOW_MORE } from '@/constants'
 import { DetailsInfoWrapper, Description, DescriptionMask } from './styles'
 
 export default class ProductDetailsInfo extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      showMoreInfo: false,
+      showDetails: false,
     }
   }
 
   handleShowMoreBtnClick = () => {
     this.setState(prevState => ({
-      showMoreInfo: !prevState.showMoreInfo,
+      showDetails: !prevState.showDetails,
     }))
   }
 
   render () {
-    const { productInfo } = this.props
-    const { title, price, rating, color, size, description } = productInfo
-    const { showMoreInfo } = this.state
+    const { product } = this.props
+    const { title, price, rating, color, size, description } = product
+    const { showDetails } = this.state
 
     return (
       <DetailsInfoWrapper>
@@ -40,17 +41,17 @@ export default class ProductDetailsInfo extends Component {
         <p>
           <span>Size:</span> {size.join(', ')}
         </p>
-        <Description showMoreInfo={showMoreInfo}>
+        <Description showDetails={showDetails}>
           <p>
             Description
           </p>
           <div>
             {description}
           </div>
-          <DescriptionMask showMoreInfo={showMoreInfo}>
+          <DescriptionMask showDetails={showDetails}>
             <button onClick={this.handleShowMoreBtnClick}>
-              {showMoreInfo && 'HIDE'}
-              {showMoreInfo === false && 'SHOW MORE'}
+              {showDetails && HIDE}
+              {showDetails === false && SHOW_MORE}
             </button>
           </DescriptionMask>
         </Description>
@@ -60,7 +61,7 @@ export default class ProductDetailsInfo extends Component {
 }
 
 ProductDetailsInfo.propTypes = {
-  productInfo: PropTypes.shape({
+  product: PropTypes.shape({
     _id: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
