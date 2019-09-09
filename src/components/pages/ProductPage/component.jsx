@@ -1,11 +1,11 @@
 import React from 'react'
 
 import StandardLayout from '@/components/layouts/Standard'
-import ProductDetailsContainer from '@/components/blocks/ProductDetails'
+import ProductDetails from '@/components/blocks/ProductDetails'
 
 const ProductPage = () => (
   <StandardLayout>
-    <ProductDetailsContainer />
+    <ProductDetails />
   </StandardLayout>
 )
 

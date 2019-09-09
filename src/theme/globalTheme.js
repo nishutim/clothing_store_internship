@@ -9,8 +9,14 @@ export const theme = {
       xl: '24px',
       headerSize: '36px',
     },
+    fontWeights: {
+      light: 300,
+      normal: 400,
+      bold: 700,
+    },
     letterSpacing: {
       normal: 'normal',
+      light: '1px',
       caps: '3px',
     },
     sectionIndents: {
@@ -23,6 +29,7 @@ export const theme = {
       zero: '0',
       halfXs: '5px',
       xs: '10px',
+      halfS: '15px',
       s: '20px',
     },
     borderRadius: {

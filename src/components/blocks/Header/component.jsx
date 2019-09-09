@@ -1,15 +1,15 @@
 import React from 'react'
 
-import SearchFormContainer from '@/components/forms/SearchForm'
-import { HeaderContainer } from './styles'
+import SearchBar from '@/components/forms/SearchBar'
+import { HeaderWrapper } from './styles'
 
 export default function Header () {
   return (
-    <HeaderContainer>
+    <HeaderWrapper>
       <h1>
-          VICTIM
+        VICTIM
       </h1>
-      <SearchFormContainer />
-    </HeaderContainer>
+      <SearchBar />
+    </HeaderWrapper>
   )
 }

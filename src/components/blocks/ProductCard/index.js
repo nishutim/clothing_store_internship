@@ -1,3 +1,3 @@
-import ProductCardContainer from './container'
+import ProductCard from './container'
 
-export default ProductCardContainer
+export default ProductCard

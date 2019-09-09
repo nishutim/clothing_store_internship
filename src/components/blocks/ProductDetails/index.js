@@ -1,3 +1,3 @@
-import ProductDetailsContainer from './container'
+import ProductDetails from './container'
 
-export default ProductDetailsContainer
+export default ProductDetails

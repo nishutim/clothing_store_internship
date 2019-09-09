@@ -1,16 +1,14 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import CatalogPageContainer from '@/components/pages/CatalogPage'
+import CatalogPage from '@/components/pages/CatalogPage'
 import ProductPage from '@/components/pages/ProductPage'
 
-const RouterWrapper = () => (
+export default () => (
   <Router>
     <Route
       exact path="/"
-      component={CatalogPageContainer} />
+      component={CatalogPage} />
     <Route path="/product" component={ProductPage} />
   </Router>
 )
-
-export default RouterWrapper

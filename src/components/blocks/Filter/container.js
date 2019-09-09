@@ -6,8 +6,6 @@ const mapStateToProps = state => ({
   products: state.products,
 })
 
-const FilterContainer = connect(
+export default connect(
   mapStateToProps,
 )(Filter)
-
-export default FilterContainer

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const SearchBar = styled.form`
+export const SearchBarWrapper = styled.form`
   max-width: 500px;
   width: 40%;
   min-width: 100px;

@@ -6,8 +6,6 @@ const mapStateToProps = state => ({
   product: state.selectedProduct,
 })
 
-const ProductDetailsContainer = connect(
+export default connect(
   mapStateToProps
 )(ProductDetails)
-
-export default ProductDetailsContainer

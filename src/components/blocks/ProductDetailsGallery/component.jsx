@@ -9,8 +9,8 @@ export default class ProductDetailsGallery extends Component {
     super(props)
     this.state = {
       currentMainPicture:
-        this.props.product.images.length
-          ? this.props.product.images[0]
+        props.product.images.length
+          ? props.product.images[0]
           : 'Oops, showing some other picture',
     }
   }

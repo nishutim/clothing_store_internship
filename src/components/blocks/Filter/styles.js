@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const FilterContainer = styled.div`
+export const FilterWrapper = styled.div`
   position: relative;
   margin-top: ${props => props.theme.main.sectionIndents.m}; 
 

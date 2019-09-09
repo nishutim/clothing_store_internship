@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const DetailsInfoWrapper = styled.div`
-  padding-top: 20px;
-  padding-bottom: 50px;
+  padding-top: ${props => props.theme.main.indents.s};
+  padding-bottom: ${props => props.theme.main.sectionIndents.m};
   width: 40%;
 
   * {
-    margin-bottom: 15px;
+    margin-bottom: ${props => props.theme.main.indents.halfS};
     text-align: justify;
   }
 
@@ -15,25 +15,25 @@ export const DetailsInfoWrapper = styled.div`
   }
 
   & span {
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: ${props => props.theme.main.fontWeights.bold};
+    font-size: ${props => props.theme.main.fontSizes.s};
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: ${props => props.theme.main.letterSpacing.light};
   }
 
   & p {
-    font-size: 20px;
+    font-size: ${props => props.theme.main.fontSizes.l};
   }
 
   & h2 {
-    font-weight: normal;
-    letter-spacing: 1px;
-    font-size: 24px;
+    font-weight: ${props => props.theme.main.fontWeights.normal};
+    letter-spacing: ${props => props.theme.main.letterSpacing.light};
+    font-size: ${props => props.theme.main.fontSizes.xl};
   }
 
   & h3 {
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: ${props => props.theme.main.fontWeights.bold};
+    font-size: ${props => props.theme.main.fontSizes.l};
   }
 `
 
@@ -41,7 +41,7 @@ export const Description = styled.div`
   position: relative;
 
   & div {
-    font-size: 16px;
+    font-size: ${props => props.theme.main.fontSizes.s};
     height: ${props => props.showDetails ? 'auto' : '100px'};
     overflow: ${props => props.showDetails ? 'auto' : 'hidden'};
   }
@@ -49,18 +49,20 @@ export const Description = styled.div`
 
 export const DescriptionMask = styled.div`
     width: 100%;
-    position: ${props => props.showMoreInfo ? 'relative' : 'absolute'};
-    top: ${props => props.showMoreInfo ? '0' : '100px'};
-    background: #fff;
+    position: ${props => props.showDetails ? 'relative' : 'absolute'};
+    top: ${props => props.showDetails ? '0' : '100px'};
+    background: ${props => props.theme.main.whiteColor};
     opacity: 0.9;
 
   & button {
     display: block;
     width: 200px;
     text-align: center;
-    margin: 0 auto;
-    padding: 5px;
-    background: #fff;
+    margin: 
+      ${props => props.theme.main.indents.zero}
+      ${props => props.theme.main.indents.auto};
+    padding: ${props => props.theme.main.indents.halfXs};
+    background: ${props => props.theme.main.whiteColor};
     border: 2px solid ${props => props.theme.main.textColor};
   }
   

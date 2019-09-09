@@ -7,9 +7,7 @@ const mapDispatchToProps = dispatch => ({
   changeFilterTag: (value, currentNameTag) => dispatch(changeFilterTag(value, currentNameTag)),
 })
 
-const FilterItemContainer = connect(
+export default connect(
   undefined,
   mapDispatchToProps
 )(FilterItem)
-
-export default FilterItemContainer

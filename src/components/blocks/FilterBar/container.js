@@ -6,8 +6,6 @@ const mapStateToProps = state => ({
   filters: state.filters,
 })
 
-const FilterBarContainer = connect(
+export default connect(
   mapStateToProps
 )(FilterBar)
-
-export default FilterBarContainer

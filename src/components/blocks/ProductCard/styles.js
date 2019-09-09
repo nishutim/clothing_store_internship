@@ -6,8 +6,8 @@ export const ProductCardWrapper = styled.div`
   justify-content: space-between;
   width: 30%;
   min-width: 200px;
-  margin-bottom: 30px;
-  padding: 2% 2%;
+  margin-bottom: ${props => props.theme.main.sectionIndents.s};
+  padding: ${props => props.theme.main.indents.s};
 
   :hover{
     cursor: pointer;
@@ -16,26 +16,28 @@ export const ProductCardWrapper = styled.div`
 
   @media only screen and (max-width: 960px) {
     width: 40%;
+    padding: ${props => props.theme.main.indents.xs};
   }
 
   @media only screen and (max-width: 515px) {
     width: 80%;
+    padding: ${props => props.theme.main.indents.xs};
   }
 
   & img {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: ${props => props.theme.main.indents.xs};
   }
 `
 
 export const ProductCardDescription = styled.div`
 & p {
-  margin-bottom: 5px;
-  padding-left: 10px;
+  margin-bottom: ${props => props.theme.main.indents.halfXs};
+  padding-left: ${props => props.theme.main.indents.xs};
 }
 
 & p:last-child {
-  font-weight: bold;
+  font-weight: ${props => props.theme.main.fontWeights.bold};
 }
 `

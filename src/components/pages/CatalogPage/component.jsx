@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import StandardLayout from '@/components/layouts/Standard'
-import ProductsContainer from '@/components/blocks/Products'
-import FilterBarContainer from '@/components/blocks/FilterBar'
+import FilterBar from '@/components/blocks/FilterBar'
+import Products from '@/components/blocks/Products'
 
 export default class CatalogPage extends Component {
   componentDidMount () {
@@ -14,8 +14,10 @@ export default class CatalogPage extends Component {
   render () {
     return (
       <StandardLayout>
-        <FilterBarContainer />
-        <ProductsContainer />
+        <>
+          <FilterBar />
+          <Products />
+        </>
       </StandardLayout>
     )
   }

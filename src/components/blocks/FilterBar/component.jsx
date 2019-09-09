@@ -2,14 +2,14 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-import FilterContainer from '@/components/blocks/Filter'
+import Filter from '@/components/blocks/Filter'
 import { FilterBarWrapper } from './styles'
 
 export default function FilterBar ({ filters }) {
   return (
     <FilterBarWrapper>
       {filters.map(filter => (
-        <FilterContainer
+        <Filter
           key={filter.title}
           title={filter.title}
           filterOptions={filter.filterOptions}

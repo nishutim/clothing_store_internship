@@ -7,9 +7,7 @@ const mapDispatchToProps = dispatch => ({
   showProductDetails: id => dispatch(selectProduct(id)),
 })
 
-const ProductCardContainer = connect(
+export default connect(
   undefined,
   mapDispatchToProps
 )(ProductCard)
-
-export default ProductCardContainer

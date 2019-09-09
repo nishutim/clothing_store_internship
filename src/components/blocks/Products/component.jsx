@@ -6,7 +6,7 @@ import { sortProducts } from '@/utils/sortProducts'
 import { filterProducts } from '@/utils/filterProducts'
 import { productShape } from '@/propTypes'
 
-import ProductCardContainer from '@/components/blocks/ProductCard'
+import ProductCard from '@/components/blocks/ProductCard'
 import { ProductsWrapper } from './styles'
 
 export default function Products ({
@@ -25,7 +25,7 @@ export default function Products ({
           filters[2].currentTag.value,
         ))
         .map(product => (
-          <ProductCardContainer
+          <ProductCard
             key={product._id.$oid}
             {...product} />
         ))}

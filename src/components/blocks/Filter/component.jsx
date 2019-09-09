@@ -5,8 +5,8 @@ import PropTypes from 'prop-types'
 import { productShape } from '@/propTypes'
 import { getFilters } from '@/utils/getFilters'
 
-import FilterItemContainer from '@/components/blocks/FilterItem'
-import { FilterContainer } from './styles'
+import FilterItem from '@/components/blocks/FilterItem'
+import { FilterWrapper } from './styles'
 
 export default class Filter extends Component {
   constructor (props) {
@@ -33,7 +33,7 @@ export default class Filter extends Component {
     } = this.props
 
     return (
-      <FilterContainer>
+      <FilterWrapper>
         <button onClick={this.handleFilterNameClick}>
           {title}
         </button>
@@ -41,14 +41,14 @@ export default class Filter extends Component {
           <div>
             {getFilters(currentFilterTagName, products, filterOptions)
               .map(filter => (
-                <FilterItemContainer
+                <FilterItem
                   key={filter}
                   tagFilter={filter}
                   currentFilterTagValue={currentFilterTagValue}
                   currentFilterTagName={currentFilterTagName} />
               ))}
           </div>}
-      </FilterContainer>
+      </FilterWrapper>
     )
   }
 }
