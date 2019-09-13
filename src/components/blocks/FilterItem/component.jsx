@@ -6,28 +6,28 @@ import { FilterOption } from './styles'
 
 export default function FilterItem (
   {
-    currentFilterTagValue,
-    currentFilterTagName,
-    tagFilter,
-    changeFilterTag,
+    selectedTagValue,
+    filterName,
+    filterOption,
+    onFilterItemClick,
   }
 
 ) {
   return (
     <FilterOption
-      currentFilterTagValue={currentFilterTagValue}
-      name={currentFilterTagName}
-      tagFilter={tagFilter}
+      selectedTagValue={selectedTagValue}
+      filterOption={filterOption}
       type="button"
-      value={tagFilter[0].toUpperCase() + tagFilter.slice(1)}
+      name={filterName}
+      value={filterOption[0].toUpperCase() + filterOption.slice(1)}
       onClick={useCallback(e =>
-        changeFilterTag(e.target.value, e.target.name), [changeFilterTag])} />
+        onFilterItemClick(e.target.value, e.target.name), [onFilterItemClick])} />
   )
 }
 
 FilterItem.propTypes = {
-  changeFilterTag: PropTypes.func.isRequired,
-  currentFilterTagValue: PropTypes.string.isRequired,
-  currentFilterTagName: PropTypes.string.isRequired,
-  tagFilter: PropTypes.string.isRequired,
+  onFilterItemClick: PropTypes.func.isRequired,
+  selectedTagValue: PropTypes.string.isRequired,
+  filterName: PropTypes.string.isRequired,
+  filterOption: PropTypes.string.isRequired,
 }

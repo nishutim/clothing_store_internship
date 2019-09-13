@@ -10,11 +10,11 @@ export default function FilterBar ({ filters }) {
     <FilterBarWrapper>
       {filters.map(filter => (
         <Filter
-          key={filter.title}
-          title={filter.title}
+          key={filter.value}
+          title={filter.label}
           filterOptions={filter.filterOptions}
-          currentFilterTagName={filter.currentTag.name}
-          currentFilterTagValue={filter.currentTag.value} />
+          filterName={filter.value}
+          selectedTagValue={filter.selectedTag} />
       ))}
     </FilterBarWrapper>
   )
@@ -23,12 +23,10 @@ export default function FilterBar ({ filters }) {
 FilterBar.propTypes = {
   filters: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
       filterOptions: PropTypes.string.isRequired,
-      currentTag: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        value: PropTypes.string.isRequired,
-      }).isRequired,
+      selectedTag: PropTypes.string.isRequired,
     })
   ).isRequired,
 }

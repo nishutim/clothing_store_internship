@@ -8,21 +8,21 @@ export default class ProductDetailsGallery extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentMainPicture:
-        props.product.images.length
+      selectedPicture:
+        props.product !== undefined && props.product.images.length
           ? props.product.images[0]
-          : 'Oops, showing some other picture',
+          : 'Picture is not available',
     }
   }
 
   handlePicClick = url => {
     this.setState({
-      currentMainPicture: url,
+      selectedPicture: url,
     })
   }
 
   render () {
-    const { currentMainPicture } = this.state
+    const { selectedPicture } = this.state
     const { product } = this.props
     const { title, images } = product
 
@@ -35,14 +35,14 @@ export default class ProductDetailsGallery extends Component {
               src={url}
               alt={title}
               onClick={() => this.handlePicClick(url)} />
-          )) : <p>Oops, something went wrong!</p>}
+          )) : <p>{selectedPicture}</p>}
         </AltImgs>
         <MainImgWrapper>
           {images.length
             ? <img
-              src={currentMainPicture}
+              src={selectedPicture}
               alt={title} />
-            : <p>Oops, something went wrong!</p>}
+            : <p>{selectedPicture}</p>}
         </MainImgWrapper>
       </DetailsGalleryWrapper>
     )

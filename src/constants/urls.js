@@ -1,1 +1,2 @@
 export const PRODUCTS_DATA_URL = 'https://gist.githubusercontent.com/AnDrOlEiN/b626d327c77b7a4f2cc105bdb0c44786/raw/90374f0b3bb23533ea7c67cf9f66ed9c8152ffb0/data.json'
+export const ERRORCASE_PICTURE = 'https://www.google.com/search?hl=ru&biw=847&bih=968&tbm=isch&sxsrf=ACYBGNSCZljOnAF9NIlxk9lK4awLu_FZ2g%3A1568188098559&sa=1&ei=wqZ4XfHRIenvsAfp5JmYCQ&q=error+404&oq=error+404&gs_l=img.3..0i67j0l3j0i67j0l5.111114.111678..112136...0.0..0.69.259.4......0....1..gws-wiz-img.......35i39.p_oZcvtc4lE&ved=0ahUKEwjxurj0o8jkAhXpN-wKHWlyBpMQ4dUDCAY&uact=5#imgrc=3FRrEdac0bKxaM:'

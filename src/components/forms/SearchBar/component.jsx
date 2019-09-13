@@ -10,7 +10,7 @@ export default function SearchForm ({ searchText, searchProducts }) {
       <input
         type="text"
         placeholder="Search"
-        value={searchText}
+        value={searchText.query}
         onChange={useCallback(e => searchProducts(e.target.value), [searchProducts])} />
     </SearchBarWrapper>
   )
@@ -18,5 +18,8 @@ export default function SearchForm ({ searchText, searchProducts }) {
 
 SearchForm.propTypes = {
   searchProducts: PropTypes.func.isRequired,
-  searchText: PropTypes.string.isRequired,
+  searchText: PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    query: PropTypes.string.isRequired,
+  }).isRequired,
 }

@@ -27,8 +27,8 @@ export default class Filter extends Component {
     const {
       title,
       filterOptions,
-      currentFilterTagValue,
-      currentFilterTagName,
+      filterName,
+      selectedTagValue,
       products,
     } = this.props
 
@@ -39,13 +39,13 @@ export default class Filter extends Component {
         </button>
         {showOptions &&
           <div>
-            {getFilters(currentFilterTagName, products, filterOptions)
+            {getFilters(filterName, products, filterOptions)
               .map(filter => (
                 <FilterItem
                   key={filter}
-                  tagFilter={filter}
-                  currentFilterTagValue={currentFilterTagValue}
-                  currentFilterTagName={currentFilterTagName} />
+                  filterOption={filter}
+                  selectedTagValue={selectedTagValue}
+                  filterName={filterName} />
               ))}
           </div>}
       </FilterWrapper>
@@ -56,7 +56,7 @@ export default class Filter extends Component {
 Filter.propTypes = {
   title: PropTypes.string.isRequired,
   filterOptions: PropTypes.string.isRequired,
-  currentFilterTagValue: PropTypes.string.isRequired,
-  currentFilterTagName: PropTypes.string.isRequired,
+  selectedTagValue: PropTypes.string.isRequired,
+  filterName: PropTypes.string.isRequired,
   products: PropTypes.arrayOf(productShape).isRequired,
 }

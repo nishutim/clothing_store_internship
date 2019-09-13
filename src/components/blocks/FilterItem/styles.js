@@ -5,8 +5,8 @@ export const FilterOption = styled.input`
   font-size: ${props => props.theme.main.fontSizes.s};
   border: none;
   color: ${props =>
-    props.currentFilterTagValue.toLowerCase() ===
-    props.tagFilter.toLowerCase()
+    props.selectedTagValue.toLowerCase() ===
+    props.filterOption.toLowerCase()
     ? props.theme.main.hoverColor : props.theme.main.textColor};
   background: ${props => props.theme.main.whiteColor};
   cursor: pointer;

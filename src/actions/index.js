@@ -3,9 +3,7 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAILURE,
   SEARCH_PRODUCTS,
-  CHANGE_FILTER_TAG,
-  SORT_PRODUCTS,
-  FILTER_PRODUCTS,
+  SELECT_FILTER_TAG,
   SELECT_PRODUCT,
 } from '@/constants'
 
@@ -36,25 +34,13 @@ export const searchProducts = searchText => {
   }
 }
 
-export const changeFilterTag = (value, name) => {
+export const selectFilterTag = (value, name) => {
   return {
-    type: CHANGE_FILTER_TAG,
+    type: SELECT_FILTER_TAG,
     payload: {
       value: value,
       name: name,
     },
-  }
-}
-
-export const sortProducts = () => {
-  return {
-    type: SORT_PRODUCTS,
-  }
-}
-
-export const filterProducts = () => {
-  return {
-    type: FILTER_PRODUCTS,
   }
 }
 

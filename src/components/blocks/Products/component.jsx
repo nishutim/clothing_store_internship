@@ -2,8 +2,7 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-import { sortProducts } from '@/utils/sortProducts'
-import { filterProducts } from '@/utils/filterProducts'
+import getFilteredProducts from '@/utils/getFilteredProducts'
 import { productShape } from '@/propTypes'
 
 import ProductCard from '@/components/blocks/ProductCard'
@@ -11,22 +10,15 @@ import { ProductsWrapper } from './styles'
 
 export default function Products ({
   products,
-  searchText,
   filters,
+  searchText,
 }) {
   return (
     <ProductsWrapper>
-      {sortProducts(filters[3].currentTag.value, products)
-        .filter(product => filterProducts(
-          product,
-          searchText,
-          filters[0].currentTag.value,
-          filters[1].currentTag.value,
-          filters[2].currentTag.value,
-        ))
+      {getFilteredProducts(products, [...filters, searchText])
         .map(product => (
           <ProductCard
-            key={product._id.$oid}
+            key={product.id}
             {...product} />
         ))}
     </ProductsWrapper>
@@ -35,15 +27,16 @@ export default function Products ({
 
 Products.propTypes = {
   products: PropTypes.arrayOf(productShape).isRequired,
-  searchText: PropTypes.string.isRequired,
+  searchText: PropTypes.shape({
+    value: PropTypes.string.isRequired,
+    query: PropTypes.string.isRequired,
+  }).isRequired,
   filters: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
       filterOptions: PropTypes.string.isRequired,
-      currentTag: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        value: PropTypes.string.isRequired,
-      }).isRequired,
+      selectedTag: PropTypes.string.isRequired,
     })
   ).isRequired,
 }

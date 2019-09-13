@@ -1,10 +1,10 @@
 import { connect } from 'react-redux'
 
 import FilterItem from './component'
-import { changeFilterTag } from '@/actions'
+import { selectFilterTag } from '@/actions'
 
 const mapDispatchToProps = dispatch => ({
-  changeFilterTag: (value, currentNameTag) => dispatch(changeFilterTag(value, currentNameTag)),
+  onFilterItemClick: (value, currentNameTag) => dispatch(selectFilterTag(value, currentNameTag)),
 })
 
 export default connect(

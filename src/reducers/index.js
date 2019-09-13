@@ -3,8 +3,9 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAILURE,
   SEARCH_PRODUCTS,
-  CHANGE_FILTER_TAG,
+  SELECT_FILTER_TAG,
   SELECT_PRODUCT,
+  SEARCH_QUERY,
   CATEGORIE,
   SIZE,
   COLOR,
@@ -15,27 +16,34 @@ const initialState = {
   loading: true,
   error: null,
   products: [],
-  searchText: '',
+  searchText: {
+    value: SEARCH_QUERY,
+    query: '',
+  },
   filters: [
     {
-      title: 'Categories',
+      label: 'Categories',
+      value: CATEGORIE,
       filterOptions: 'tags',
-      currentTag: { name: CATEGORIE, value: 'All' },
+      selectedTag: 'All',
     },
     {
-      title: 'Sizes',
+      label: 'Sizes',
+      value: SIZE,
       filterOptions: 'size',
-      currentTag: { name: SIZE, value: 'All' },
+      selectedTag: 'All',
     },
     {
-      title: 'Colors',
+      label: 'Colors',
+      value: COLOR,
       filterOptions: 'color',
-      currentTag: { name: COLOR, value: 'All' },
+      selectedTag: 'All',
     },
     {
-      title: 'Sort',
+      label: 'Sort',
+      value: SORT,
       filterOptions: 'sort',
-      currentTag: { name: SORT, value: 'Our Picks' },
+      selectedTag: 'Our Picks',
     },
   ],
   selectedProduct: {},
@@ -62,18 +70,21 @@ const reducer = (state = initialState, action) => {
     case SEARCH_PRODUCTS:
       return {
         ...state,
-        searchText: action.payload,
+        searchText: {
+          value: state.searchText.value,
+          query: action.payload,
+        },
       }
-    case CHANGE_FILTER_TAG:
+    case SELECT_FILTER_TAG:
       return {
         ...state,
         filters: [...state.filters].map(filter => {
-          if (filter.currentTag.name !== action.payload.name) {
+          if (filter.value !== action.payload.name) {
             return filter
           }
           return {
             ...filter,
-            currentTag: { ...filter.currentTag, value: action.payload.value },
+            selectedTag: action.payload.value,
           }
         }),
       }
@@ -81,7 +92,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         selectedProduct: state.products.filter(product =>
-          action.payload === product._id.$oid)[0],
+          action.payload === product.id)[0],
       }
     default:
       return state

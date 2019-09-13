@@ -31,6 +31,22 @@ export const ProductCardWrapper = styled.div`
   }
 `
 
+export const ErrorCaseBlock = styled.div`
+  width: 100%;
+  margin-bottom: ${props => props.theme.main.indents.xs};
+  & * { text-align: center; }
+
+  & h2 {
+    font-weight: ${props => props.theme.main.fontWeights.bold};
+    font-size: ${props => props.theme.main.fontSizes.headerSize};
+    color: ${props => props.theme.main.hoverColor}
+  }
+
+  & p {
+    font-size: ${props => props.theme.main.fontSizes.l}
+  }
+`
+
 export const ProductCardDescription = styled.div`
 & p {
   margin-bottom: ${props => props.theme.main.indents.halfXs};

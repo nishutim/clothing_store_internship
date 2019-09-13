@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 
-import { ProductCardWrapper, ProductCardDescription } from './styles'
+import { ProductCardWrapper, ProductCardDescription, ErrorCaseBlock } from './styles'
 
-export default function ProductCard ({ _id, title, price, images, showProductDetails }) {
+export default function ProductCard ({ id, title, price, images, showProductDetails }) {
   return (
     <ProductCardWrapper>
       <Link
         to="/product" onClick={useCallback(() => {
-          showProductDetails(_id.$oid)
-        }, [_id.$oid, showProductDetails])}
+          showProductDetails(id)
+        }, [id, showProductDetails])}
       >
-        <img
-          src={images.length ? images[0] : 'Oops, showing some other pic'}
-          alt={title} />
+        {images.length
+          ? <img
+            src={images[0]}
+            alt={title} />
+          : <ErrorCaseBlock><h2>404</h2><p>Sorry, picture not found</p></ErrorCaseBlock>}
         <ProductCardDescription>
           <p>{title}</p>
           <p>{price} &#36;</p>
@@ -27,9 +29,7 @@ export default function ProductCard ({ _id, title, price, images, showProductDet
 }
 
 ProductCard.propTypes = {
-  _id: PropTypes.shape({
-    $oid: PropTypes.string.isRequired,
-  }).isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   images: PropTypes.arrayOf(
